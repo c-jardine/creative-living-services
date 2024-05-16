@@ -15,9 +15,9 @@ import {
   Stack,
   useDisclosure,
 } from "@chakra-ui/react";
-import { Facebook, Mail, Menu, Phone } from "lucide-react";
 import NextLink from "next/link";
 import React from "react";
+import { FaEnvelope, FaFacebook, FaHamburger, FaPhone } from "react-icons/fa";
 import { Logo } from "../Logo";
 
 export default function MobileNavbar() {
@@ -34,7 +34,7 @@ export default function MobileNavbar() {
         <HStack justifyContent="space-between">
           <Logo />
           <IconButton
-            icon={<Icon as={Menu} strokeWidth={3} />}
+            icon={<Icon as={FaHamburger} strokeWidth={3} />}
             aria-label="Toggle navigation"
             onClick={onOpen}
             variant="outline"
@@ -75,14 +75,14 @@ export default function MobileNavbar() {
                 <Stack>
                   <Stack spacing={4}>
                     <HStack>
-                      <Icon as={Phone} stroke="gray.500" />
+                      <Icon as={FaPhone} stroke="gray.500" />
                       <Link href="tel:+14197244690" fontSize="sm">
                         (419) 724-4690
                       </Link>
                     </HStack>
 
                     <HStack>
-                      <Icon as={Mail} stroke="gray.500" />
+                      <Icon as={FaEnvelope} stroke="gray.500" />
                       <Link
                         href="mailto:creativelivingservice@gmail.com"
                         fontSize="sm"
@@ -92,7 +92,11 @@ export default function MobileNavbar() {
                     </HStack>
 
                     <HStack alignItems="center">
-                      <Icon as={Facebook} fill="#1877F2" stroke="transparent" />
+                      <Icon
+                        as={FaFacebook}
+                        fill="#1877F2"
+                        stroke="transparent"
+                      />
                       <Link
                         href="https://www.facebook.com/creativelivingservice"
                         target="_blank"

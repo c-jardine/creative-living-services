@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <>
       <Header />
-      <Box as="main" bg="hsl(209, 62%, 98%)" pb={16}>
+      <Box as="main" bg="hsl(209, 62%, 98%)" py={16}>
         <Stack className={montserrat.className} spacing={16}>
           {children}
         </Stack>

@@ -1,6 +1,6 @@
 import { Box, Container, Icon, Link } from "@chakra-ui/react";
-import { CircleArrowRight } from "lucide-react";
 import NextLink from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function AnnouncementBar() {
   return (
@@ -18,7 +18,7 @@ export default function AnnouncementBar() {
           fontSize="sm"
         >
           We&apos;re always accepting applications. Fill yours out now!
-          <Icon as={CircleArrowRight} stroke="white" />
+          <Icon as={FaArrowRight} stroke="white" />
         </Link>
       </Container>
     </Box>

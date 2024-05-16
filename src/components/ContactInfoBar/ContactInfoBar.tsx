@@ -6,7 +6,7 @@ import {
   IconButton,
   Link,
 } from "@chakra-ui/react";
-import { Facebook, Mail, Phone } from "lucide-react";
+import { FaEnvelope, FaFacebook, FaPhone } from "react-icons/fa";
 
 export default function ContactInfoBar() {
   return (
@@ -16,7 +16,7 @@ export default function ContactInfoBar() {
           <IconButton
             icon={
               <Icon
-                as={Facebook}
+                as={FaFacebook}
                 fill="#1877F2"
                 stroke="transparent"
                 _groupHover={{ fill: "white" }}
@@ -36,14 +36,14 @@ export default function ContactInfoBar() {
 
           <HStack alignItems="center" spacing={4}>
             <HStack>
-              <Icon as={Phone} stroke="white" />
+              <Icon as={FaPhone} stroke="white" />
               <Link href="tel:+14197244690" color="white" fontSize="sm">
                 (419) 724-4690
               </Link>
             </HStack>
 
             <HStack>
-              <Icon as={Mail} stroke="white" />
+              <Icon as={FaEnvelope} stroke="white" />
               <Link
                 href="mailto:creativelivingservice@gmail.com"
                 color="white"

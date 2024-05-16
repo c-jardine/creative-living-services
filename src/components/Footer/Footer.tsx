@@ -1,7 +1,6 @@
 import {
   Box,
   Container,
-  Heading,
   HStack,
   Icon,
   Link,
@@ -9,16 +8,17 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import {
-  ChevronRight,
-  Clock,
-  ExternalLink,
-  Mail,
-  MapPinned,
-  Phone,
-} from "lucide-react";
 import { Montserrat } from "next/font/google";
 import NextLink from "next/link";
+import {
+  FaChevronRight,
+  FaClock,
+  FaEnvelope,
+  FaExternalLinkAlt,
+  FaMapPin,
+  FaPhone,
+} from "react-icons/fa";
+import { Heading } from "../Heading";
 import { Logo } from "../Logo";
 
 const montserrat = Montserrat({
@@ -48,27 +48,27 @@ export default function Footer() {
               </Heading>
               <Stack>
                 <HStack as={NextLink} href="/" spacing={1}>
-                  <Icon as={ChevronRight} />
+                  <Icon as={FaChevronRight} />
                   <Text>Home</Text>
                 </HStack>
                 <HStack as={NextLink} href="/services" spacing={1}>
-                  <Icon as={ChevronRight} />
+                  <Icon as={FaChevronRight} />
                   <Text>Services</Text>
                 </HStack>
                 <HStack as={NextLink} href="/ads-vh" spacing={1}>
-                  <Icon as={ChevronRight} />
+                  <Icon as={FaChevronRight} />
                   <Text>ADS/VH</Text>
                 </HStack>
                 <HStack as={NextLink} href="/about" spacing={1}>
-                  <Icon as={ChevronRight} />
+                  <Icon as={FaChevronRight} />
                   <Text>About</Text>
                 </HStack>
                 <HStack as={NextLink} href="/contact" spacing={1}>
-                  <Icon as={ChevronRight} />
+                  <Icon as={FaChevronRight} />
                   <Text>Contact</Text>
                 </HStack>
                 <HStack as={NextLink} href="/careers" spacing={1}>
-                  <Icon as={ChevronRight} />
+                  <Icon as={FaChevronRight} />
                   <Text>Careers</Text>
                 </HStack>
               </Stack>
@@ -90,7 +90,7 @@ export default function Footer() {
                   alignItems="flex-start"
                   spacing={1}
                 >
-                  <Icon as={ExternalLink} mt={1} />
+                  <Icon as={FaExternalLinkAlt} mt={1} />
                   <Text>Lucas County Board of Developmental Disabilities</Text>
                 </HStack>
               </Stack>
@@ -106,7 +106,7 @@ export default function Footer() {
               </Heading>
               <Stack>
                 <HStack alignItems="flex-start">
-                  <Icon as={MapPinned} mt={1} />
+                  <Icon as={FaMapPin} mt={1} />
                   <Stack spacing={0}>
                     <Text>4757 N. Summit St.</Text>
                     <Text>Toledo, OH 43611</Text>
@@ -115,18 +115,20 @@ export default function Footer() {
               </Stack>
 
               <HStack alignItems="center">
-                <Icon as={Phone} />
+                <Icon as={FaPhone} />
                 <Text>(419) 724-4690</Text>
               </HStack>
 
               <HStack alignItems="center">
-                <Icon as={Mail} />
+                <Icon as={FaEnvelope} />
                 <Text>creativelivingservice@gmail.com</Text>
               </HStack>
 
-              <Text fontWeight="bold">Hours</Text>
+              <Heading as="h2" fontSize="md" fontWeight="bold">
+                Hours
+              </Heading>
               <HStack mt={-2} alignItems="flex-start">
-                <Icon as={Clock} mt={1} />
+                <Icon as={FaClock} mt={1} />
                 <Stack spacing={0}>
                   <Text>Mon - Fri: 9 am - 4 pm</Text>
                   <Text>Sat - Sun: CLOSED</Text>
