@@ -1,3 +1,4 @@
+import { institutionTypes, statesList } from "@/constants";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { saveEducationHistory } from "@/store/reducers";
 import {
@@ -11,6 +12,7 @@ import {
   Input,
   Radio,
   RadioGroup,
+  Select,
   SimpleGrid,
   Stack,
   Text,
@@ -85,7 +87,19 @@ export default function EducationHistoryForm() {
               isInvalid={!!errors.educationHistory?.[index]?.institution}
             >
               <FormLabel fontSize="sm">Institution</FormLabel>
-              <Input {...register(`educationHistory.${index}.institution`)} />
+              <Controller
+                control={control}
+                name={`educationHistory.${index}.institution`}
+                render={({ field }) => (
+                  <Select {...field} placeholder="Choose institution...">
+                    {institutionTypes.map((institution, index) => (
+                      <option key={index} value={institution.value}>
+                        {institution.label}
+                      </option>
+                    ))}
+                  </Select>
+                )}
+              />
               {errors.educationHistory?.[index]?.institution && (
                 <FormErrorMessage fontSize="xs">
                   {errors.educationHistory?.[index]?.institution.message}
@@ -174,7 +188,19 @@ export default function EducationHistoryForm() {
               isInvalid={!!errors.educationHistory?.[index]?.state}
             >
               <FormLabel fontSize="sm">State</FormLabel>
-              <Input {...register(`educationHistory.${index}.state`)} />
+              <Controller
+                control={control}
+                name={`educationHistory.${index}.state`}
+                render={({ field }) => (
+                  <Select {...field} placeholder="Choose state...">
+                    {statesList.map((state, index) => (
+                      <option key={index} value={state.value}>
+                        {state.label}
+                      </option>
+                    ))}
+                  </Select>
+                )}
+              />
               {errors.educationHistory?.[index]?.state && (
                 <FormErrorMessage fontSize="xs">
                   {errors.educationHistory?.[index]?.state.message}

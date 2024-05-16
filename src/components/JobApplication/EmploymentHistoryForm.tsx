@@ -1,3 +1,4 @@
+import { statesList } from "@/constants";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { saveEmploymentHistory } from "@/store/reducers";
 import {
@@ -8,6 +9,7 @@ import {
   FormLabel,
   Heading,
   Input,
+  Select,
   SimpleGrid,
   Stack,
   Text,
@@ -15,7 +17,7 @@ import {
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Montserrat } from "next/font/google";
-import { useFieldArray, useForm } from "react-hook-form";
+import { Controller, useFieldArray, useForm } from "react-hook-form";
 import { useStepperContext } from "./context";
 import FormNavButtons from "./FormNavButtons";
 import { employmentHistorySchema } from "./schemas";
@@ -178,7 +180,19 @@ export default function EmploymentHistoryForm() {
               isInvalid={!!errors.employmentHistory?.[index]?.state}
             >
               <FormLabel fontSize="sm">State</FormLabel>
-              <Input {...register(`employmentHistory.${index}.state`)} />
+              <Controller
+                control={control}
+                name={`employmentHistory.${index}.state`}
+                render={({ field }) => (
+                  <Select {...field} placeholder="Choose state...">
+                    {statesList.map((state, index) => (
+                      <option key={index} value={state.value}>
+                        {state.label}
+                      </option>
+                    ))}
+                  </Select>
+                )}
+              />
               {errors.employmentHistory?.[index]?.state && (
                 <FormErrorMessage fontSize="xs">
                   {errors.employmentHistory?.[index]?.state.message}

@@ -1,1 +1,1 @@
-export { default as phoneMask } from "./phoneMask";
+export { default as phoneMaskOptions } from "./phoneMaskOptions";

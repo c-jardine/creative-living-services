@@ -1,18 +1,22 @@
-import { phoneMask, statesList } from "@/constants";
+import { phoneMaskOptions, statesList } from "@/constants";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { saveContactInfo } from "@/store/reducers";
 import {
+  Flex,
   FormControl,
   FormErrorMessage,
   FormLabel,
   Heading,
   Input,
+  InputGroup,
+  InputRightElement,
   Select,
   SimpleGrid,
   Stack,
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMaskito } from "@maskito/react";
+import { US } from "country-flag-icons/react/3x2";
 import { Montserrat } from "next/font/google";
 import { Controller, useForm } from "react-hook-form";
 import { useStepperContext } from "./context";
@@ -46,11 +50,25 @@ export default function ContactInfoForm() {
     resolver: zodResolver(contactInfoSchema),
   });
 
-  const phoneMaskRef = useMaskito({ options: phoneMask });
+  const phoneMaskRef = useMaskito({ options: phoneMaskOptions });
+  const additionalPhoneMaskRef = useMaskito({ options: phoneMaskOptions });
 
   function onSubmit(data: ContactInfoType) {
     dispatch(saveContactInfo(data));
     goToNext();
+  }
+
+  function Flag() {
+    return (
+      <Flex w={6} h={6} rounded="full" overflow="hidden" shadow="md">
+        <US
+          title="United States"
+          style={{
+            transform: "scale(1.75)",
+          }}
+        />
+      </Flex>
+    );
   }
 
   return (
@@ -58,8 +76,8 @@ export default function ContactInfoForm() {
       <Heading as="h2" fontFamily={montserrat.style.fontFamily} fontSize="2xl">
         Contact Information
       </Heading>
-      <SimpleGrid columns={3} gap={4}>
-        <FormControl gridColumn="1 / span 3" isInvalid={!!errors.addressLine1}>
+      <SimpleGrid columns={6} gap={4}>
+        <FormControl gridColumn="1 / span 6" isInvalid={!!errors.addressLine1}>
           <FormLabel fontSize="sm">Address line 1</FormLabel>
           <Input {...register("addressLine1")} />
           {errors.addressLine1 && (
@@ -68,7 +86,7 @@ export default function ContactInfoForm() {
             </FormErrorMessage>
           )}
         </FormControl>
-        <FormControl gridColumn="1 / span 3" isInvalid={!!errors.addressLine2}>
+        <FormControl gridColumn="1 / span 6" isInvalid={!!errors.addressLine2}>
           <FormLabel fontSize="sm">Address line 2</FormLabel>
           <Input {...register("addressLine2")} />
           {errors.addressLine2 && (
@@ -77,7 +95,7 @@ export default function ContactInfoForm() {
             </FormErrorMessage>
           )}
         </FormControl>
-        <FormControl gridColumn="1 / span 2" isInvalid={!!errors.city}>
+        <FormControl gridColumn="1 / span 4" isInvalid={!!errors.city}>
           <FormLabel fontSize="sm">City</FormLabel>
           <Input {...register("city")} />
           {errors.city && (
@@ -86,7 +104,7 @@ export default function ContactInfoForm() {
             </FormErrorMessage>
           )}
         </FormControl>
-        <FormControl gridColumn="3" isInvalid={!!errors.state}>
+        <FormControl gridColumn="5 / span 2" isInvalid={!!errors.state}>
           <FormLabel fontSize="sm">State</FormLabel>
           <Controller
             control={control}
@@ -107,7 +125,7 @@ export default function ContactInfoForm() {
             </FormErrorMessage>
           )}
         </FormControl>
-        <FormControl gridColumn="1 / span 3" isInvalid={!!errors.zipCode}>
+        <FormControl gridColumn="1 / span 6" isInvalid={!!errors.zipCode}>
           <FormLabel fontSize="sm">Zip code</FormLabel>
           <Input {...register("zipCode")} />
           {errors.zipCode && (
@@ -117,7 +135,7 @@ export default function ContactInfoForm() {
           )}
         </FormControl>
 
-        <FormControl gridColumn="1 / span 3" isInvalid={!!errors.email}>
+        <FormControl gridColumn="1 / span 6" isInvalid={!!errors.email}>
           <FormLabel fontSize="sm">Email</FormLabel>
           <Input inputMode="email" {...register("email")} />
           {errors.email && (
@@ -126,20 +144,28 @@ export default function ContactInfoForm() {
             </FormErrorMessage>
           )}
         </FormControl>
-        <FormControl gridColumn="1 / span 3" isInvalid={!!errors.phone}>
+        <FormControl
+          gridColumn={{ base: "1 /span 6", md: "1 / span 3" }}
+          isInvalid={!!errors.phone}
+        >
           <FormLabel fontSize="sm">Phone number</FormLabel>
           <Controller
             control={control}
             name="phone"
             render={({ field: { onBlur, value } }) => (
-              <Input
-                ref={phoneMaskRef}
-                type="tel"
-                inputMode="tel"
-                onInput={(e) => setValue("phone", e.currentTarget.value)}
-                onBlur={onBlur}
-                value={value}
-              />
+              <InputGroup>
+                <Input
+                  ref={phoneMaskRef}
+                  type="tel"
+                  inputMode="tel"
+                  onInput={(e) => setValue("phone", e.currentTarget.value)}
+                  onBlur={onBlur}
+                  value={value}
+                />
+                <InputRightElement pointerEvents="none">
+                  <Flag />
+                </InputRightElement>
+              </InputGroup>
             )}
           />
           {errors.phone && (
@@ -149,7 +175,7 @@ export default function ContactInfoForm() {
           )}
         </FormControl>
         <FormControl
-          gridColumn="1 / span 3"
+          gridColumn={{ base: "1 / span 6", md: "4 / span 3" }}
           isInvalid={!!errors.additionalPhone}
         >
           <FormLabel fontSize="sm">Additional phone number</FormLabel>
@@ -157,16 +183,21 @@ export default function ContactInfoForm() {
             control={control}
             name="additionalPhone"
             render={({ field: { onBlur, value } }) => (
-              <Input
-                ref={phoneMaskRef}
-                type="tel"
-                inputMode="tel"
-                onInput={(e) =>
-                  setValue("additionalPhone", e.currentTarget.value)
-                }
-                onBlur={onBlur}
-                value={value}
-              />
+              <InputGroup>
+                <Input
+                  ref={additionalPhoneMaskRef}
+                  type="tel"
+                  inputMode="tel"
+                  onInput={(e) =>
+                    setValue("additionalPhone", e.currentTarget.value)
+                  }
+                  onBlur={onBlur}
+                  value={value}
+                />
+                <InputRightElement pointerEvents="none">
+                  <Flag />
+                </InputRightElement>
+              </InputGroup>
             )}
           />
           {errors.additionalPhone && (

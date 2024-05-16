@@ -13,6 +13,7 @@ import React from "react";
 import {
   FaAddressBook,
   FaBriefcase,
+  FaCertificate,
   FaGraduationCap,
   FaPlus,
   FaSignature,
@@ -20,6 +21,7 @@ import {
 } from "react-icons/fa";
 import AdditionalInfoForm from "./AdditionalInfoForm";
 import AuthorizationSection from "./AuthorizationSection";
+import CertificationsForm from "./CertificationsForm";
 import ContactInfoForm from "./ContactInfoForm";
 import { StepperContext } from "./context";
 import EducationHistoryForm from "./EducationHistoryForm";
@@ -32,6 +34,7 @@ const steps = [
   { title: "Additional info", icon: FaPlus },
   { title: "Employment history", icon: FaBriefcase },
   { title: "Education history", icon: FaGraduationCap },
+  { title: "Certifications", icon: FaCertificate },
   { title: "Authorization/Signature", icon: FaSignature },
 ];
 
@@ -41,6 +44,7 @@ const formSections = [
   AdditionalInfoForm,
   EmploymentHistoryForm,
   EducationHistoryForm,
+  CertificationsForm,
   AuthorizationSection,
 ];
 

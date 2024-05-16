@@ -26,7 +26,7 @@ export const contactInfoSchema = z.object({
 });
 
 export const additionalInfoSchema = z.object({
-  driversLicense: z.string(),
+  driversLicense: z.string().min(1, "Required"),
   isFelon: z.union([
     z.literal("Yes", { errorMap: () => ({ message: "Required" }) }),
     z.literal("No", { errorMap: () => ({ message: "Required" }) }),
@@ -89,6 +89,22 @@ export const educationHistorySchema = z.object({
       ]),
     })
   ),
+});
+
+export const certificationsSchema = z.object({
+  hasCPR: z.union([
+    z.literal("Yes", { errorMap: () => ({ message: "Required" }) }),
+    z.literal("No", { errorMap: () => ({ message: "Required" }) }),
+  ]),
+  hasFirstAid: z.union([
+    z.literal("Yes", { errorMap: () => ({ message: "Required" }) }),
+    z.literal("No", { errorMap: () => ({ message: "Required" }) }),
+  ]),
+  hasOralTopical: z.union([
+    z.literal("Yes", { errorMap: () => ({ message: "Required" }) }),
+    z.literal("No", { errorMap: () => ({ message: "Required" }) }),
+  ]),
+  other: z.string(),
 });
 
 export const authorizationSignatureSchema = z.object({

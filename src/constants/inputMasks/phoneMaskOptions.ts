@@ -1,4 +1,6 @@
-const phoneMaskOptions = {
+import type { MaskitoOptions } from "@maskito/core";
+
+export default {
   mask: [
     "+",
     "1",
@@ -18,6 +20,4 @@ const phoneMaskOptions = {
     /\d/,
     /\d/,
   ],
-};
-
-export default phoneMaskOptions;
+} as MaskitoOptions;

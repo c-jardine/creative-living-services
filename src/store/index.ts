@@ -2,6 +2,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import AdditionalInfoReducer from "./reducers/AdditionalInfoReducer";
+import CertificationsReducer from "./reducers/CertificationsReducer";
 import ContactInfoReducer from "./reducers/ContactInfoReducer";
 import EducationHistoryReducer from "./reducers/EducationHistoryReducer";
 import EmploymentHistoryReducer from "./reducers/EmploymentHistoryReducer";
@@ -18,6 +19,7 @@ const RootReducer = combineReducers({
   additionalInfo: AdditionalInfoReducer,
   employmentHistory: EmploymentHistoryReducer,
   educationHistory: EducationHistoryReducer,
+  certifications: CertificationsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, RootReducer);
