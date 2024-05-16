@@ -20,7 +20,7 @@ import {
   FaUser,
 } from "react-icons/fa";
 import AdditionalInfoForm from "./AdditionalInfoForm";
-import AuthorizationSection from "./AuthorizationSection";
+import AuthorizationForm from "./AuthorizationForm";
 import CertificationsForm from "./CertificationsForm";
 import ContactInfoForm from "./ContactInfoForm";
 import { StepperContext } from "./context";
@@ -45,7 +45,7 @@ const formSections = [
   EmploymentHistoryForm,
   EducationHistoryForm,
   CertificationsForm,
-  AuthorizationSection,
+  AuthorizationForm,
 ];
 
 export default function JobApplication() {

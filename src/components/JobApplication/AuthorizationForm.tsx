@@ -27,13 +27,14 @@ const defaultValues = {
   signDate: format(new Date(), "MM/dd/yyyy"),
 };
 
-export default function AuthorizationSection() {
+export default function AuthorizationForm() {
   const {
     personalDetails,
     contactInfo,
     additionalInfo,
     employmentHistory,
     educationHistory,
+    certifications,
   } = useAppSelector((state) => state.persistedReducer);
 
   const {
@@ -52,6 +53,7 @@ export default function AuthorizationSection() {
       additionalInfo,
       employmentHistory,
       educationHistory,
+      certifications,
       authorization: data,
     };
 
