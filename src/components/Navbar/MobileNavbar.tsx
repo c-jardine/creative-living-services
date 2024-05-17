@@ -47,22 +47,52 @@ export default function MobileNavbar() {
               <DrawerHeader></DrawerHeader>
               <DrawerBody>
                 <Stack as="nav">
-                  <Link as={NextLink} href="/" variant="navLink">
+                  <Link
+                    as={NextLink}
+                    href="/"
+                    variant="navLink"
+                    onClick={onClose}
+                  >
                     Home
                   </Link>
-                  <Link as={NextLink} href="/services" variant="navLink">
+                  <Link
+                    as={NextLink}
+                    href="/services"
+                    variant="navLink"
+                    onClick={onClose}
+                  >
                     Services
                   </Link>
-                  <Link as={NextLink} href="/ads-vh" variant="navLink">
+                  <Link
+                    as={NextLink}
+                    href="/ads-vh"
+                    variant="navLink"
+                    onClick={onClose}
+                  >
                     ADS/VH
                   </Link>
-                  <Link as={NextLink} href="/about" variant="navLink">
+                  <Link
+                    as={NextLink}
+                    href="/about"
+                    variant="navLink"
+                    onClick={onClose}
+                  >
                     About
                   </Link>
-                  <Link as={NextLink} href="/contact" variant="navLink">
+                  <Link
+                    as={NextLink}
+                    href="/contact"
+                    variant="navLink"
+                    onClick={onClose}
+                  >
                     Contact
                   </Link>
-                  <Link as={NextLink} href="/careers" variant="navLink">
+                  <Link
+                    as={NextLink}
+                    href="/careers"
+                    variant="navLink"
+                    onClick={onClose}
+                  >
                     Careers
                   </Link>
                 </Stack>
