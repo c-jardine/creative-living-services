@@ -1,4 +1,4 @@
-import { statesList } from "@/constants";
+import { phoneMaskOptions, statesList } from "@/constants";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { saveEmploymentHistory } from "@/store/reducers";
 import {
@@ -8,6 +8,8 @@ import {
   FormErrorMessage,
   FormLabel,
   Input,
+  InputGroup,
+  InputRightElement,
   Select,
   SimpleGrid,
   Stack,
@@ -15,8 +17,10 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useMaskito } from "@maskito/react";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
 import { Heading } from "../Heading";
+import { InputFlag } from "../InputFlag";
 import { useStepperContext } from "./context";
 import FormNavButtons from "./FormNavButtons";
 import { employmentHistorySchema } from "./schemas";
@@ -41,6 +45,9 @@ const defaultValues: EmploymentHistoryType["employmentHistory"][0] = {
 };
 
 export default function EmploymentHistoryForm() {
+  const phoneMaskRef = useMaskito({ options: phoneMaskOptions });
+  const supervisorPhoneMaskRef = useMaskito({ options: phoneMaskOptions });
+
   const {
     stepper: { goToNext },
   } = useStepperContext();
@@ -54,6 +61,7 @@ export default function EmploymentHistoryForm() {
     register,
     handleSubmit,
     control,
+    setValue,
     formState: { errors },
   } = useForm<EmploymentHistoryType>({
     defaultValues: {
@@ -211,6 +219,42 @@ export default function EmploymentHistoryForm() {
             </FormControl>
 
             <FormControl
+              gridColumn="1 / span 6"
+              isInvalid={!!errors.employmentHistory?.[index]?.supervisorNumber}
+            >
+              <FormLabel fontSize="sm">Phone number</FormLabel>
+              <Controller
+                control={control}
+                name={`employmentHistory.${index}.phone`}
+                render={({ field: { onBlur, value } }) => (
+                  <InputGroup>
+                    <Input
+                      ref={phoneMaskRef}
+                      type="tel"
+                      inputMode="tel"
+                      onInput={(e) =>
+                        setValue(
+                          `employmentHistory.${index}.phone`,
+                          e.currentTarget.value
+                        )
+                      }
+                      onBlur={onBlur}
+                      value={value}
+                    />
+                    <InputRightElement pointerEvents="none">
+                      <InputFlag />
+                    </InputRightElement>
+                  </InputGroup>
+                )}
+              />
+              {errors.employmentHistory?.[index]?.phone && (
+                <FormErrorMessage fontSize="xs">
+                  {errors.employmentHistory?.[index]?.phone?.message}
+                </FormErrorMessage>
+              )}
+            </FormControl>
+
+            <FormControl
               key={field.id}
               gridColumn="1 / span 3"
               isInvalid={!!errors.employmentHistory?.[index]?.supervisorName}
@@ -226,13 +270,33 @@ export default function EmploymentHistoryForm() {
               )}
             </FormControl>
             <FormControl
-              key={field.id}
               gridColumn="4 / span 3"
               isInvalid={!!errors.employmentHistory?.[index]?.supervisorNumber}
             >
-              <FormLabel fontSize="sm">Supervisor number</FormLabel>
-              <Input
-                {...register(`employmentHistory.${index}.supervisorNumber`)}
+              <FormLabel fontSize="sm">Supervisor phone</FormLabel>
+              <Controller
+                control={control}
+                name={`employmentHistory.${index}.supervisorNumber`}
+                render={({ field: { onBlur, value } }) => (
+                  <InputGroup>
+                    <Input
+                      ref={supervisorPhoneMaskRef}
+                      type="tel"
+                      inputMode="tel"
+                      onInput={(e) =>
+                        setValue(
+                          `employmentHistory.${index}.supervisorNumber`,
+                          e.currentTarget.value
+                        )
+                      }
+                      onBlur={onBlur}
+                      value={value}
+                    />
+                    <InputRightElement pointerEvents="none">
+                      <InputFlag />
+                    </InputRightElement>
+                  </InputGroup>
+                )}
               />
               {errors.employmentHistory?.[index]?.supervisorNumber && (
                 <FormErrorMessage fontSize="xs">
@@ -242,7 +306,6 @@ export default function EmploymentHistoryForm() {
             </FormControl>
 
             <FormControl
-              key={field.id}
               gridColumn="1 / span 3"
               isInvalid={!!errors.employmentHistory?.[index]?.salary}
             >
