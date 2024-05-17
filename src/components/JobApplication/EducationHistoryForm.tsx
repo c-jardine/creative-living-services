@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
+import { ConfirmDeleteDialog } from "../ConfirmDeleteDialog";
 import { Heading } from "../Heading";
 import { useStepperContext } from "./context";
 import FormNavButtons from "./FormNavButtons";
@@ -202,13 +203,12 @@ export default function EducationHistoryForm() {
               )}
             </FormControl>
 
-            <Button
-              colorScheme="red"
-              gridColumn={{ md: "1 / span 6" }}
-              onClick={() => remove()}
-            >
-              Delete
-            </Button>
+            <ConfirmDeleteDialog
+              onDelete={() => remove(index)}
+              buttonProps={{
+                gridColumn: { md: "1 / span 6" },
+              }}
+            />
             <Divider gridColumn="1 / span 6" />
           </SimpleGrid>
         ))}
