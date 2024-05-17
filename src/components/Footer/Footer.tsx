@@ -116,14 +116,42 @@ export default function Footer() {
                 </HStack>
               </Stack>
 
-              <HStack alignItems="center">
-                <Icon as={FaPhone} />
-                <Text>(419) 724-4690</Text>
+              <HStack
+                as={Link}
+                href="tel:+1419724-4690"
+                alignItems="center"
+                role="group"
+              >
+                <Icon
+                  as={FaPhone}
+                  transition="250ms ease-in-out"
+                  _groupHover={{ color: "blue.400" }}
+                />
+                <Text
+                  transition="250ms ease-in-out"
+                  _groupHover={{ color: "blue.500" }}
+                >
+                  (419) 724-4690
+                </Text>
               </HStack>
 
-              <HStack alignItems="center">
-                <Icon as={FaEnvelope} />
-                <Text>creativelivingservice@gmail.com</Text>
+              <HStack
+                as={Link}
+                href="mailto:creativelivingservice@gmail.com"
+                alignItems="center"
+                role="group"
+              >
+                <Icon
+                  as={FaEnvelope}
+                  transition="250ms ease-in-out"
+                  _groupHover={{ color: "blue.400" }}
+                />
+                <Text
+                  transition="250ms ease-in-out"
+                  _groupHover={{ color: "blue.500" }}
+                >
+                  creativelivingservice@gmail.com
+                </Text>
               </HStack>
 
               <Heading as="h2" fontSize="md" fontWeight="bold">
