@@ -7,6 +7,7 @@ import {
   SimpleGrid,
   Stack,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { format } from "date-fns";
@@ -22,6 +23,8 @@ const defaultValues = {
 };
 
 export default function AuthorizationForm() {
+  const toast = useToast();
+
   const {
     personalDetails,
     contactInfo,
@@ -41,24 +44,38 @@ export default function AuthorizationForm() {
   });
 
   async function onSubmit(data: AuthorizationSignatureType) {
-    const formData = {
-      personalDetails,
-      contactInfo,
-      additionalInfo,
-      employmentHistory,
-      educationHistory,
-      certifications,
-    };
+    try {
+      const formData = {
+        personalDetails,
+        contactInfo,
+        additionalInfo,
+        employmentHistory,
+        educationHistory,
+        certifications,
+      };
 
-    const res = await fetch("/api/sendJobApplication", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-    const d = await res.json();
-    alert(JSON.stringify(d));
+      await fetch("/api/sendJobApplication", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      toast({
+        title: "Success",
+        description: "Job application successfully submitted!",
+        status: "success",
+      });
+    } catch (error) {
+      if (error instanceof Error) {
+        toast({
+          title: "Error",
+          description: error.message,
+          status: "error",
+        });
+      }
+    }
   }
 
   return (
