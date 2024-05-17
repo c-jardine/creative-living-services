@@ -6,7 +6,6 @@ import {
   FormControl,
   FormErrorMessage,
   FormLabel,
-  Heading,
   Input,
   InputGroup,
   InputRightElement,
@@ -17,17 +16,12 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMaskito } from "@maskito/react";
 import { US } from "country-flag-icons/react/3x2";
-import { Montserrat } from "next/font/google";
 import { Controller, useForm } from "react-hook-form";
+import { Heading } from "../Heading";
 import { useStepperContext } from "./context";
 import FormNavButtons from "./FormNavButtons";
 import { contactInfoSchema } from "./schemas";
 import { ContactInfoType } from "./types";
-
-const montserrat = Montserrat({
-  weight: ["300", "400", "700"],
-  subsets: ["latin"],
-});
 
 export default function ContactInfoForm() {
   const {
@@ -73,7 +67,7 @@ export default function ContactInfoForm() {
 
   return (
     <Stack as="form" spacing={8} onSubmit={handleSubmit(onSubmit)}>
-      <Heading as="h2" fontFamily={montserrat.style.fontFamily} fontSize="2xl">
+      <Heading as="h2" fontSize="2xl">
         Contact Information
       </Heading>
       <SimpleGrid columns={6} gap={4}>

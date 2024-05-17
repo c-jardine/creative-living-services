@@ -4,7 +4,6 @@ import {
   FormControl,
   FormErrorMessage,
   FormLabel,
-  Heading,
   HStack,
   Radio,
   RadioGroup,
@@ -13,17 +12,12 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Montserrat } from "next/font/google";
 import { Controller, Path, useForm } from "react-hook-form";
+import { Heading } from "../Heading";
 import { useStepperContext } from "./context";
 import FormNavButtons from "./FormNavButtons";
 import { certificationsSchema } from "./schemas";
 import { CertificationsType } from "./types";
-
-const montserrat = Montserrat({
-  weight: ["300", "400", "700"],
-  subsets: ["latin"],
-});
 
 export default function CertificationsForm() {
   const {
@@ -87,11 +81,7 @@ export default function CertificationsForm() {
   return (
     <Stack as="form" spacing={8} onSubmit={handleSubmit(onSubmit)}>
       <Stack>
-        <Heading
-          as="h2"
-          fontFamily={montserrat.style.fontFamily}
-          fontSize="2xl"
-        >
+        <Heading as="h2" fontSize="2xl">
           Certifications
         </Heading>
         <Text fontSize="sm">

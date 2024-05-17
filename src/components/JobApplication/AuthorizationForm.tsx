@@ -3,7 +3,6 @@ import {
   FormControl,
   FormErrorMessage,
   FormLabel,
-  Heading,
   Input,
   SimpleGrid,
   Stack,
@@ -11,16 +10,11 @@ import {
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { format } from "date-fns";
-import { Montserrat } from "next/font/google";
 import { useForm } from "react-hook-form";
+import { Heading } from "../Heading";
 import FormNavButtons from "./FormNavButtons";
 import { authorizationSignatureSchema } from "./schemas";
 import { AuthorizationSignatureType } from "./types";
-
-const montserrat = Montserrat({
-  weight: ["300", "400", "700"],
-  subsets: ["latin"],
-});
 
 const defaultValues = {
   signature: "",
@@ -63,7 +57,7 @@ export default function AuthorizationForm() {
 
   return (
     <Stack as="form" spacing={8} onSubmit={handleSubmit(onSubmit)}>
-      <Heading as="h2" fontFamily={montserrat.style.fontFamily} fontSize="2xl">
+      <Heading as="h2" fontSize="2xl">
         Authorization
       </Heading>
       <Text fontSize="sm">
