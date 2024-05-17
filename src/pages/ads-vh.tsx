@@ -1,4 +1,5 @@
 import { Heading } from "@/components/Heading";
+import { HeadMetadata } from "@/components/HeadMetadata";
 import { SplitImageBlock } from "@/components/SplitImageBlock";
 import {
   Container,
@@ -9,7 +10,6 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import Head from "next/head";
 import NextLink from "next/link";
 import { FaChevronRight } from "react-icons/fa";
 import { PiBroomFill } from "react-icons/pi";
@@ -18,22 +18,11 @@ import { RiCandleFill, RiFileShredFill } from "react-icons/ri";
 export default function AdsVhPage() {
   return (
     <>
-      <Head>
-        <title>
-          Adult day services and vocational habilitation | Creative Living
-          Services
-        </title>
-        <meta
-          name="description"
-          content="Discover our Adult Day Services and Vocational Habilitation programs offering paid employment and activities for adults with developmental disabilities."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="canonical"
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}/ads-vh`}
-        />
-      </Head>
+      <HeadMetadata
+        title="Adult day services and vocational habilitation | Creative Living Services"
+        description="Discover our Adult Day Services and Vocational Habilitation programs offering paid employment and activities for adults with developmental disabilities."
+        canonical="/ads-vh"
+      />
 
       <Stack spacing={16}>
         <Container as={Stack} maxW="container.md">

@@ -1,4 +1,5 @@
 import { Heading } from "@/components/Heading";
+import { HeadMetadata } from "@/components/HeadMetadata";
 import {
   Avatar,
   Container,
@@ -10,24 +11,15 @@ import {
   Text,
   UnorderedList,
 } from "@chakra-ui/react";
-import Head from "next/head";
 
 export default function AboutPage() {
   return (
     <>
-      <Head>
-        <title>Learn more about us | Creative Living Services</title>
-        <meta
-          name="description"
-          content="Creative Living Services is dedicated to improving lives through personalized care, committed staff, and community partnerships."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="canonical"
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}/about`}
-        />
-      </Head>
+      <HeadMetadata
+        title="Learn more about us | Creative Living Services"
+        description="Creative Living Services is dedicated to improving lives through personalized care, committed staff, and community partnerships."
+        canonical="/about"
+      />
 
       <Stack spacing={16}>
         <Container as={Stack} maxW="container.md">

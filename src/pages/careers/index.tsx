@@ -1,4 +1,5 @@
 import { Heading } from "@/components/Heading";
+import { HeadMetadata } from "@/components/HeadMetadata";
 import {
   Container,
   Link,
@@ -7,25 +8,16 @@ import {
   Text,
   UnorderedList,
 } from "@chakra-ui/react";
-import Head from "next/head";
 import NextLink from "next/link";
 
 export default function CareersPage() {
   return (
     <>
-      <Head>
-        <title>Explore careers at Creative Living Services</title>
-        <meta
-          name="description"
-          content="Explore career opportunities at Creative Living Services, where you'll provide personalized care for individuals with developmental disabilities."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="canonical"
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}/careers`}
-        />
-      </Head>
+      <HeadMetadata
+        title="Explore careers at Creative Living Services"
+        description="Explore career opportunities at Creative Living Services, where you'll provide personalized care for individuals with developmental disabilities."
+        canonical="/careers"
+      />
 
       <Container as={Stack} spacing={8} maxW="container.md">
         <Stack>

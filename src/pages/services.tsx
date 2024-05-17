@@ -1,4 +1,5 @@
 import { Heading } from "@/components/Heading";
+import { HeadMetadata } from "@/components/HeadMetadata";
 import { SplitImageBlock } from "@/components/SplitImageBlock";
 import {
   Box,
@@ -9,29 +10,17 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import Head from "next/head";
 import NextLink from "next/link";
 import { FaChevronRight } from "react-icons/fa";
 
 export default function ServicesPage() {
   return (
     <>
-      <Head>
-        <title>
-          Services for developmental or cognitive disabilities | Creative Living
-          Services
-        </title>
-        <meta
-          name="description"
-          content="Our services support individuals with developmental or cognitive disabilities in achieving greater independence and enhancing their quality of life."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="canonical"
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}/services`}
-        />
-      </Head>
+      <HeadMetadata
+        title="Services for developmental or cognitive disabilities | Creative Living Services"
+        description="Our services support individuals with developmental or cognitive disabilities in achieving greater independence and enhancing their quality of life."
+        canonical="/services"
+      />
 
       <Stack spacing={16}>
         <Container as={Stack} maxW="container.md">

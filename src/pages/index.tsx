@@ -1,4 +1,5 @@
 import { Heading } from "@/components/Heading";
+import { HeadMetadata } from "@/components/HeadMetadata";
 import {
   Box,
   Container,
@@ -9,9 +10,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import Head from "next/head";
 import NextLink from "next/link";
-import React from "react";
 import {
   FaAmbulance,
   FaBriefcase,
@@ -21,26 +20,14 @@ import {
 import { FaHandsAslInterpreting } from "react-icons/fa6";
 
 export default function HomePage() {
-  const [isOpen, setIsOpen] = React.useState(false);
-
-  React.useEffect(() => {
-    setTimeout(() => setIsOpen(true), 1000);
-  }, []);
-
   return (
     <>
-      <Head>
-        <title>
-          Personalized Care for Individuals with Developmental Disabilities
-        </title>
-        <meta
-          name="description"
-          content="Providing homemaker care, transportation, vocational habilitation, and adult day services for individuals with cognitive or developmental disabilities."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_BASE_URL}/`} />
-      </Head>
+      <HeadMetadata
+        title="Personalized Care for Individuals with Developmental Disabilities"
+        description="Providing homemaker care, transportation, vocational habilitation, and adult day services for individuals with cognitive or developmental disabilities."
+        canonical="/"
+      />
+
       <Box position="relative" mt={-16} overflow="hidden">
         <Image
           src="/images/home-hero.jpg"

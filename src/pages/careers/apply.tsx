@@ -1,24 +1,16 @@
 import { Heading } from "@/components/Heading";
+import { HeadMetadata } from "@/components/HeadMetadata";
 import { JobApplication } from "@/components/JobApplication";
 import { Container, Stack, Text } from "@chakra-ui/react";
-import Head from "next/head";
 
 export default function ApplyPage() {
   return (
     <>
-      <Head>
-        <title>Creative Living Services Job Application</title>
-        <meta
-          name="description"
-          content="We're always accepting applications and will review them on an as-needed basis. When positions are available, qualified applicants will be contacted for interviews."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="canonical"
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}/careers/apply`}
-        />
-      </Head>
+      <HeadMetadata
+        title="Creative Living Services Job Application"
+        description="We're always accepting applications and will review them on an as-needed basis. When positions are available, qualified applicants will be contacted for interviews."
+        canonical="/careers/apply"
+      />
 
       <Container as={Stack} spacing={8} maxW="container.md">
         <Stack>
