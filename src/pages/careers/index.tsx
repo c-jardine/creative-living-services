@@ -170,6 +170,14 @@ export default function CareersPage() {
             </ListItem>
           </UnorderedList>
         </Stack>
+        <Link
+          as={NextLink}
+          href="/careers/apply"
+          variant="navLinkOutline"
+          w="fit-content"
+        >
+          Apply now
+        </Link>
       </Container>
     </>
   );
