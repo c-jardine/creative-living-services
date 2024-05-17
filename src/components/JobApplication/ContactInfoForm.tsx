@@ -131,7 +131,7 @@ export default function ContactInfoForm() {
 
         <FormControl gridColumn="1 / span 6" isInvalid={!!errors.email}>
           <FormLabel fontSize="sm">Email</FormLabel>
-          <Input inputMode="email" {...register("email")} />
+          <Input inputMode="email" autoCapitalize='none' {...register("email")} />
           {errors.email && (
             <FormErrorMessage fontSize="xs">
               {errors.email.message}
