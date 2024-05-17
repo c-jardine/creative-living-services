@@ -9,6 +9,7 @@ import {
   InputRightElement,
   Stack,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMaskito } from "@maskito/react";
@@ -25,6 +26,8 @@ const defaultValues: ContactFormType = {
 };
 
 export default function ContactForm() {
+  const toast = useToast();
+
   const {
     register,
     control,
@@ -39,9 +42,32 @@ export default function ContactForm() {
 
   const phoneMaskRef = useMaskito({ options: phoneMaskOptions });
 
-  function onSubmit(data: ContactFormType) {
-    alert(JSON.stringify(data));
-    reset(defaultValues);
+  async function onSubmit(data: ContactFormType) {
+    try {
+      await fetch("/api/sendContactForm", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      toast({
+        title: "Success",
+        description: "Message successfully sent!",
+        status: "success",
+      });
+
+      reset(defaultValues);
+    } catch (error) {
+      if (error instanceof Error) {
+        toast({
+          title: "Error",
+          description: error.message,
+          status: "error",
+        });
+      }
+    }
   }
 
   return (

@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { JobApplicationEmailTemplate } from "@/components/JobApplication";
+import { ContactFormEmailTemplate } from "@/components/ContactForm";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { Resend } from "resend";
 
@@ -14,8 +14,8 @@ export default async function handler(
   const { data, error } = await resend.emails.send({
     from: `Creative Living Services <${senderEmail}>`,
     to: [receiverEmail],
-    subject: `Job application received`,
-    react: JobApplicationEmailTemplate(req.body),
+    subject: "Message received from contact form",
+    react: ContactFormEmailTemplate(req.body),
   });
 
   if (error) {
