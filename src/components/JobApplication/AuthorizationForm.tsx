@@ -48,14 +48,12 @@ export default function AuthorizationForm() {
       employmentHistory,
       educationHistory,
       certifications,
-      // authorization: data,
     };
 
-    // TODO: Send formData to email
     const res = await fetch("/api/sendJobApplication", {
-      method: 'POST',
+      method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     });
