@@ -17,11 +17,16 @@ export default function FormNavButtons({
       {...containerProps}
     >
       {/* Show previous on all but the first step */}
-      {activeStep !== 0 && <Button onClick={goToPrevious}>Previous</Button>}
+      {activeStep !== 0 && (
+        <Button variant="outline" colorScheme="blue" onClick={goToPrevious}>
+          Previous
+        </Button>
+      )}
 
       {/* Show next on all but the last step */}
       <Button
         type="submit"
+        colorScheme="blue"
         // isDisabled={!form.formState.isValid}
       >
         {activeStep === size - 1 ? "Submit" : "Next"}
