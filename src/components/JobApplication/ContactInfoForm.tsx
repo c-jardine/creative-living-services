@@ -127,7 +127,7 @@ export default function ContactInfoForm() {
         </FormControl>
         <FormControl gridColumn="1 / span 6" isInvalid={!!errors.zipCode}>
           <FormLabel fontSize="sm">Zip code</FormLabel>
-          <Input {...register("zipCode")} />
+          <Input {...register("zipCode")} inputMode="numeric" />
           {errors.zipCode && (
             <FormErrorMessage fontSize="xs">
               {errors.zipCode.message}

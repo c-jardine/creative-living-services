@@ -205,7 +205,10 @@ export default function EmploymentHistoryForm() {
               isInvalid={!!errors.employmentHistory?.[index]?.zipCode}
             >
               <FormLabel fontSize="sm">Zip code</FormLabel>
-              <Input {...register(`employmentHistory.${index}.zipCode`)} />
+              <Input
+                {...register(`employmentHistory.${index}.zipCode`)}
+                inputMode="numeric"
+              />
               {errors.employmentHistory?.[index]?.zipCode && (
                 <FormErrorMessage fontSize="xs">
                   {errors.employmentHistory?.[index]?.zipCode.message}
@@ -250,7 +253,10 @@ export default function EmploymentHistoryForm() {
               isInvalid={!!errors.employmentHistory?.[index]?.salary}
             >
               <FormLabel fontSize="sm">Current/ending salary</FormLabel>
-              <Input {...register(`employmentHistory.${index}.salary`)} />
+              <Input
+                {...register(`employmentHistory.${index}.salary`)}
+                inputMode="decimal"
+              />
               {errors.employmentHistory?.[index]?.salary && (
                 <FormErrorMessage fontSize="xs">
                   {errors.employmentHistory?.[index]?.salary.message}
@@ -263,7 +269,10 @@ export default function EmploymentHistoryForm() {
               isInvalid={!!errors.employmentHistory?.[index]?.weeklyHours}
             >
               <FormLabel fontSize="sm">Weekly hours</FormLabel>
-              <Input {...register(`employmentHistory.${index}.weeklyHours`)} />
+              <Input
+                {...register(`employmentHistory.${index}.weeklyHours`)}
+                inputMode="decimal"
+              />
               {errors.employmentHistory?.[index]?.weeklyHours && (
                 <FormErrorMessage fontSize="xs">
                   {errors.employmentHistory?.[index]?.weeklyHours.message}
