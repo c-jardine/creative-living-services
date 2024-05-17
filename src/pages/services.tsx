@@ -32,7 +32,7 @@ export default function ServicesPage() {
             Services for individuals with developmental or cognitive
             disabilities
           </Heading>
-          <Text color='gray.600'>
+          <Text color="gray.600">
             Based in Toledo, OH, our comprehensive range of services is designed
             to support individuals with developmental or cognitive disabilities
             in achieving greater independence and improving their quality of
@@ -96,17 +96,7 @@ export default function ServicesPage() {
           </SplitImageBlock>
         </Container>
 
-        <Box
-          borderTopWidth={2}
-          borderBottomWidth={2}
-          borderColor="blue.200"
-          mt={-32}
-          pt={32}
-          pb={16}
-          px={4}
-          bg="blue.600"
-          shadow="lg"
-        >
+        <Box mt={-32} pt={32} pb={16} px={4} bg="blue.600" shadow="lg">
           <Container maxW="1920px">
             <SimpleGrid columns={{ base: 1, xl: 5 }} spacing={8}>
               <Stack>
