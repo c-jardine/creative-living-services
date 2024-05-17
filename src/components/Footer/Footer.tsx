@@ -28,7 +28,7 @@ const montserrat = Montserrat({
 
 export default function Footer() {
   return (
-    <Box as="footer" className={montserrat.className} position='relative'>
+    <Box as="footer" className={montserrat.className} position="relative">
       <Box bg="white" borderTopWidth={1}>
         <Container maxW="container.2xl" p={8}>
           <SimpleGrid columns={{ base: 1, sm: 2, lg: 6 }} spacing={8}>
@@ -39,6 +39,7 @@ export default function Footer() {
             />
 
             <Stack
+              as="nav"
               spacing={4}
               fontSize="sm"
               gridColumn={{ sm: "1 / span 2", md: "1", lg: "3" }}
@@ -75,6 +76,7 @@ export default function Footer() {
             </Stack>
 
             <Stack
+              as="nav"
               spacing={4}
               fontSize="sm"
               gridColumn={{ sm: "1 / span 2", md: "2", lg: "4" }}
