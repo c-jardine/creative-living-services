@@ -29,7 +29,7 @@ export default function PersonalDetailsForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<PersonalDetailsType>({
     defaultValues: personalDetailsState,
     resolver: zodResolver(personalDetailsSchema),
@@ -76,7 +76,7 @@ export default function PersonalDetailsForm() {
         </FormControl>
       </SimpleGrid>
 
-      <FormNavButtons />
+      <FormNavButtons nextDisabled={!isValid} />
     </Stack>
   );
 }

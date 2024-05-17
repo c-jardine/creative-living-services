@@ -52,7 +52,7 @@ export default function AuthorizationForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<AuthorizationSignatureType>({
     defaultValues,
     resolver: zodResolver(authorizationSignatureSchema),
@@ -192,7 +192,7 @@ export default function AuthorizationForm() {
         </FormControl>
       </SimpleGrid>
 
-      <FormNavButtons isLoading={isLoading} />
+      <FormNavButtons nextDisabled={!isValid} isLoading={isLoading} />
     </Stack>
   );
 }

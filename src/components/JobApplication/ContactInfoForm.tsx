@@ -37,7 +37,7 @@ export default function ContactInfoForm() {
     control,
     setValue,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<ContactInfoType>({
     defaultValues: contactInfoState,
     resolver: zodResolver(contactInfoSchema),
@@ -192,7 +192,7 @@ export default function ContactInfoForm() {
         </FormControl>
       </SimpleGrid>
 
-      <FormNavButtons />
+      <FormNavButtons nextDisabled={!isValid} />
     </Stack>
   );
 }

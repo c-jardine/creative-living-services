@@ -47,7 +47,7 @@ export default function EducationHistoryForm() {
     register,
     handleSubmit,
     control,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<EducationHistoryType>({
     defaultValues: {
       educationHistory: educationHistoryState.educationHistory,
@@ -223,7 +223,7 @@ export default function EducationHistoryForm() {
         Add new
       </Button>
 
-      <FormNavButtons />
+      <FormNavButtons nextDisabled={!isValid} />
     </Stack>
   );
 }

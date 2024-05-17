@@ -33,7 +33,7 @@ export default function CertificationsForm() {
     register,
     handleSubmit,
     control,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<CertificationsType>({
     defaultValues: certificationsState,
     resolver: zodResolver(certificationsSchema),
@@ -134,7 +134,7 @@ export default function CertificationsForm() {
         </FormControl>
       </Stack>
 
-      <FormNavButtons />
+      <FormNavButtons nextDisabled={!isValid} />
     </Stack>
   );
 }

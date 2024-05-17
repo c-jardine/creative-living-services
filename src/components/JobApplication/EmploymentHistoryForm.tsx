@@ -62,7 +62,7 @@ export default function EmploymentHistoryForm() {
     handleSubmit,
     control,
     setValue,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<EmploymentHistoryType>({
     defaultValues: {
       employmentHistory: employmentHistoryState.employmentHistory,
@@ -387,7 +387,7 @@ export default function EmploymentHistoryForm() {
         Add new
       </Button>
 
-      <FormNavButtons />
+      <FormNavButtons nextDisabled={!isValid} />
     </Stack>
   );
 }

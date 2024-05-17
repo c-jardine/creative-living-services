@@ -33,7 +33,7 @@ export default function AdditionalInfoForm() {
     register,
     handleSubmit,
     control,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<AdditionalInfoType>({
     defaultValues: additionalInfoState,
     resolver: zodResolver(additionalInfoSchema),
@@ -172,7 +172,7 @@ export default function AdditionalInfoForm() {
         </FormControl>
       </Stack>
 
-      <FormNavButtons />
+      <FormNavButtons nextDisabled={!isValid} />
     </Stack>
   );
 }
