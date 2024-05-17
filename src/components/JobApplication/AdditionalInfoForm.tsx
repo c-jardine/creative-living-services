@@ -172,7 +172,7 @@ export default function AdditionalInfoForm() {
         </FormControl>
       </Stack>
 
-      <FormNavButtons nextDisabled={!isValid} />
+      <FormNavButtons />
     </Stack>
   );
 }

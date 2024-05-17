@@ -76,7 +76,7 @@ export default function PersonalDetailsForm() {
         </FormControl>
       </SimpleGrid>
 
-      <FormNavButtons nextDisabled={!isValid} />
+      <FormNavButtons />
     </Stack>
   );
 }

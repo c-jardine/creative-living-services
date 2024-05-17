@@ -192,7 +192,7 @@ export default function ContactInfoForm() {
         </FormControl>
       </SimpleGrid>
 
-      <FormNavButtons nextDisabled={!isValid} />
+      <FormNavButtons />
     </Stack>
   );
 }

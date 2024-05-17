@@ -134,7 +134,7 @@ export default function CertificationsForm() {
         </FormControl>
       </Stack>
 
-      <FormNavButtons nextDisabled={!isValid} />
+      <FormNavButtons />
     </Stack>
   );
 }

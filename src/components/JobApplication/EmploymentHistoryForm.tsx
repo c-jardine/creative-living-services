@@ -387,7 +387,7 @@ export default function EmploymentHistoryForm() {
         Add new
       </Button>
 
-      <FormNavButtons nextDisabled={!isValid} />
+      <FormNavButtons />
     </Stack>
   );
 }

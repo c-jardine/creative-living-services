@@ -223,7 +223,7 @@ export default function EducationHistoryForm() {
         Add new
       </Button>
 
-      <FormNavButtons nextDisabled={!isValid} />
+      <FormNavButtons />
     </Stack>
   );
 }
