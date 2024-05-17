@@ -1,14 +1,18 @@
-import { Box, SimpleGrid, Stack } from "@chakra-ui/react";
+import { Box, BoxProps, SimpleGrid, Stack, StackProps } from "@chakra-ui/react";
 import React from "react";
 
 export default function SplitImageBlock({
   children,
   imgSrc,
   flip = false,
+  contentProps,
+  imgProps,
 }: {
   children: React.ReactNode;
   imgSrc: string;
   flip?: boolean;
+  contentProps?: StackProps;
+  imgProps?: BoxProps;
 }) {
   return (
     <SimpleGrid columns={{ base: 1, md: 5 }} gap={8}>
@@ -19,6 +23,7 @@ export default function SplitImageBlock({
         bg="blue.200"
         p={{ base: 4, sm: 8 }}
         justifyContent="space-between"
+        {...contentProps}
       >
         {children}
       </Stack>
@@ -29,6 +34,7 @@ export default function SplitImageBlock({
         minH={{ base: 72, md: "24rem" }}
         bgImage={`url("${imgSrc}")`}
         bgSize="cover"
+        {...imgProps}
       />
     </SimpleGrid>
   );

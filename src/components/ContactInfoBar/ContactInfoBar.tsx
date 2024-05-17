@@ -10,43 +10,40 @@ import { FaEnvelope, FaFacebook, FaPhone } from "react-icons/fa";
 
 export default function ContactInfoBar() {
   return (
-    <Box display={{ base: "none", lg: "block" }} bg="blue.500">
+    <Box display={{ base: "none", lg: "block" }} bg="blue.950">
       <Container maxW="container.2xl" px={8}>
         <HStack alignItems="center" justifyContent="space-between">
           <IconButton
             icon={
               <Icon
                 as={FaFacebook}
-                fill="#1877F2"
+                color="blue.50"
                 stroke="transparent"
                 _groupHover={{ fill: "white" }}
               />
             }
             aria-label="View Creative Living Services on Facebook (opens in new tab)."
-            bg="white"
-            borderLeftWidth={2}
-            borderRightWidth={2}
-            borderColor="white"
+            bg="blue.950"
             rounded="none"
             role="group"
             _hover={{
-              bg: "#1877F2",
+              bg: "blue.600",
             }}
           />
 
-          <HStack alignItems="center" spacing={4}>
+          <HStack alignItems="center" spacing={8}>
             <HStack>
-              <Icon as={FaPhone} stroke="white" />
-              <Link href="tel:+14197244690" color="white" fontSize="sm">
+              <Icon as={FaPhone} color="blue.200" />
+              <Link href="tel:+14197244690" color="blue.50" fontSize="sm">
                 (419) 724-4690
               </Link>
             </HStack>
 
             <HStack>
-              <Icon as={FaEnvelope} stroke="white" />
+              <Icon as={FaEnvelope} color="blue.200" />
               <Link
                 href="mailto:creativelivingservice@gmail.com"
-                color="white"
+                color="blue.50"
                 fontSize="sm"
               >
                 creativelivingservice@gmail.com

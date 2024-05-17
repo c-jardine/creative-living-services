@@ -68,7 +68,7 @@ export default function JobApplication() {
             <StepIndicator>
               <StepStatus
                 incomplete={<Icon as={step.icon} color="gray.400" />}
-                active={<Icon as={step.icon} color="blue.500" />}
+                active={<Icon as={step.icon} color="blue.600" />}
                 complete={<Icon as={step.icon} color="white" />}
               />
             </StepIndicator>

@@ -40,7 +40,7 @@ export default function HomePage() {
           left={16}
           rounded="xl"
           transform="translateY(-50%)"
-          bg="blue.500"
+          bg="blue.600"
           px={16}
           py={8}
           maxW="container.sm"

@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 export default function AnnouncementBar() {
   return (
-    <Box bg="#7792BC">
+    <Box bg="blue.600">
       <Container maxW="container.2xl" px={8}>
         <Link
           as={NextLink}
@@ -14,11 +14,11 @@ export default function AnnouncementBar() {
           justifyContent="center"
           gap={2}
           py={2}
-          color="white"
+          color="blue.50"
           fontSize="sm"
         >
           We&apos;re always accepting applications. Fill yours out now!
-          <Icon as={FaArrowRight} stroke="white" />
+          <Icon as={FaArrowRight} color="blue.50" />
         </Link>
       </Container>
     </Box>
