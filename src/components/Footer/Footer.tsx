@@ -18,6 +18,7 @@ import {
   FaMapPin,
   FaPhone,
 } from "react-icons/fa";
+import { IconType } from "react-icons/lib";
 import { Heading } from "../Heading";
 import { Logo } from "../Logo";
 
@@ -25,6 +26,44 @@ const montserrat = Montserrat({
   weight: ["300", "400", "700"],
   subsets: ["latin"],
 });
+
+function CustomLink({
+  href,
+  icon,
+  isExternal = false,
+  children,
+}: {
+  href: string;
+  icon?: IconType;
+  isExternal?: boolean;
+  children: string;
+}) {
+  return (
+    <HStack
+      as={isExternal ? Link : NextLink}
+      href={href}
+      alignItems="flex-start"
+      role="group"
+    >
+      <Icon
+        as={icon ? icon : FaChevronRight}
+        mt={1}
+        transition="250ms ease-in-out"
+        _groupHover={{
+          color: "blue.400",
+        }}
+      />
+      <Text
+        transition="250ms ease-in-out"
+        _groupHover={{
+          color: "blue.500",
+        }}
+      >
+        {children}
+      </Text>
+    </HStack>
+  );
+}
 
 export default function Footer() {
   return (
@@ -48,30 +87,12 @@ export default function Footer() {
                 Links
               </Heading>
               <Stack>
-                <HStack as={NextLink} href="/" spacing={1}>
-                  <Icon as={FaChevronRight} />
-                  <Text>Home</Text>
-                </HStack>
-                <HStack as={NextLink} href="/services" spacing={1}>
-                  <Icon as={FaChevronRight} />
-                  <Text>Services</Text>
-                </HStack>
-                <HStack as={NextLink} href="/ads-vh" spacing={1}>
-                  <Icon as={FaChevronRight} />
-                  <Text>ADS/VH</Text>
-                </HStack>
-                <HStack as={NextLink} href="/about" spacing={1}>
-                  <Icon as={FaChevronRight} />
-                  <Text>About</Text>
-                </HStack>
-                <HStack as={NextLink} href="/contact" spacing={1}>
-                  <Icon as={FaChevronRight} />
-                  <Text>Contact</Text>
-                </HStack>
-                <HStack as={NextLink} href="/careers" spacing={1}>
-                  <Icon as={FaChevronRight} />
-                  <Text>Careers</Text>
-                </HStack>
+                <CustomLink href="/">Home</CustomLink>
+                <CustomLink href="/services">Services</CustomLink>
+                <CustomLink href="/ads-vh">ADS/VH</CustomLink>
+                <CustomLink href="/about">About</CustomLink>
+                <CustomLink href="/contact">Contact</CustomLink>
+                <CustomLink href="/careers">Careers</CustomLink>
               </Stack>
             </Stack>
 
@@ -85,16 +106,13 @@ export default function Footer() {
                 Resources
               </Heading>
               <Stack>
-                <HStack
-                  as={Link}
+                <CustomLink
                   href="https://lucasdd.org"
-                  target="_blank"
-                  alignItems="flex-start"
-                  spacing={1}
+                  icon={FaExternalLinkAlt}
+                  isExternal
                 >
-                  <Icon as={FaExternalLinkAlt} mt={1} />
-                  <Text>Lucas County Board of Developmental Disabilities</Text>
-                </HStack>
+                  Lucas County Board of Developmental Disabilities
+                </CustomLink>
               </Stack>
             </Stack>
 
@@ -106,53 +124,25 @@ export default function Footer() {
               <Heading as="h2" fontSize="lg" fontWeight="bold">
                 Contact
               </Heading>
-              <Stack>
-                <HStack alignItems="flex-start">
-                  <Icon as={FaMapPin} mt={1} />
-                  <Stack spacing={0}>
-                    <Text>4757 N. Summit St.</Text>
-                    <Text>Toledo, OH 43611</Text>
-                  </Stack>
-                </HStack>
-              </Stack>
-
-              <HStack
-                as={Link}
-                href="tel:+1419724-4690"
-                alignItems="center"
-                role="group"
-              >
-                <Icon
-                  as={FaPhone}
-                  transition="250ms ease-in-out"
-                  _groupHover={{ color: "blue.400" }}
-                />
-                <Text
-                  transition="250ms ease-in-out"
-                  _groupHover={{ color: "blue.500" }}
-                >
-                  (419) 724-4690
-                </Text>
+              <HStack alignItems="flex-start">
+                <Icon as={FaMapPin} mt={1} />
+                <Stack spacing={0}>
+                  <Text>4757 N. Summit St.</Text>
+                  <Text>Toledo, OH 43611</Text>
+                </Stack>
               </HStack>
 
-              <HStack
-                as={Link}
+              <CustomLink href="tel:+1419724-4690" icon={FaPhone} isExternal>
+                (419) 724-4690
+              </CustomLink>
+
+              <CustomLink
                 href="mailto:creativelivingservice@gmail.com"
-                alignItems="center"
-                role="group"
+                icon={FaEnvelope}
+                isExternal
               >
-                <Icon
-                  as={FaEnvelope}
-                  transition="250ms ease-in-out"
-                  _groupHover={{ color: "blue.400" }}
-                />
-                <Text
-                  transition="250ms ease-in-out"
-                  _groupHover={{ color: "blue.500" }}
-                >
-                  creativelivingservice@gmail.com
-                </Text>
-              </HStack>
+                creativelivingservice@gmail.com
+              </CustomLink>
 
               <Heading as="h2" fontSize="md" fontWeight="bold">
                 Hours
