@@ -18,3 +18,13 @@ export type CertificationsType = z.infer<typeof certificationsSchema>;
 export type AuthorizationSignatureType = z.infer<
   typeof authorizationSignatureSchema
 >;
+
+export type JobApplicationType = {
+  personalDetails: PersonalDetailsType;
+  contactInfo: ContactInfoType;
+  additionalInfo: AdditionalInfoType;
+  employmentHistory: EmploymentHistoryType;
+  educationHistory: EducationHistoryType;
+  certifications: CertificationsType;
+  authorization: AuthorizationSignatureType;
+};

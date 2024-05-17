@@ -40,7 +40,7 @@ export default function AuthorizationForm() {
     resolver: zodResolver(authorizationSignatureSchema),
   });
 
-  function onSubmit(data: AuthorizationSignatureType) {
+  async function onSubmit(data: AuthorizationSignatureType) {
     const formData = {
       personalDetails,
       contactInfo,
@@ -48,11 +48,19 @@ export default function AuthorizationForm() {
       employmentHistory,
       educationHistory,
       certifications,
-      authorization: data,
+      // authorization: data,
     };
 
     // TODO: Send formData to email
-    alert(JSON.stringify(formData));
+    const res = await fetch("/api/sendJobApplication", {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData),
+    });
+    const d = await res.json();
+    alert(JSON.stringify(d));
   }
 
   return (
