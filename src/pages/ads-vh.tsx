@@ -19,7 +19,10 @@ export default function AdsVhPage() {
   return (
     <>
       <Head>
-        <title>Adult Day Services & Vocational Habilitation</title>
+        <title>
+          Adult day services and vocational habilitation | Creative Living
+          Services
+        </title>
         <meta
           name="description"
           content="Discover our Adult Day Services and Vocational Habilitation programs offering paid employment and activities for adults with developmental disabilities."
@@ -126,9 +129,7 @@ export default function AdsVhPage() {
           </SplitImageBlock>
 
           <Container as={Stack} maxW="container.md">
-            <Heading as="h3">
-              Want to make an impact?
-            </Heading>
+            <Heading as="h3">Want to make an impact?</Heading>
             <Text color="gray.600">
               We invite you to experience our competitive rates and exceptional
               service quality, all supervised by our trained staff to ensure

@@ -10,7 +10,7 @@ export default function ApplyPage() {
         <title>Creative Living Services Job Application</title>
         <meta
           name="description"
-          content="Providing homemaker care, transportation, vocational habilitation, and adult day services for individuals with cognitive or developmental disabilities."
+          content="We're always accepting applications and will review them on an as-needed basis. When positions are available, qualified applicants will be contacted for interviews."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

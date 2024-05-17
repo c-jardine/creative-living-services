@@ -16,10 +16,10 @@ export default function AboutPage() {
   return (
     <>
       <Head>
-        <title>About Creative Living Services</title>
+        <title>Learn more about us | Creative Living Services</title>
         <meta
           name="description"
-          content="Creative Living Services is dedicated to improving lives through personalized care, committed staff, and community partnerships. Discover our mission and values."
+          content="Creative Living Services is dedicated to improving lives through personalized care, committed staff, and community partnerships."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -89,7 +89,7 @@ export default function AboutPage() {
             overflow="hidden"
           >
             <Image
-            display={{base: 'none', md: 'block'}}
+              display={{ base: "none", md: "block" }}
               src="/graphics/squares.png"
               alt="Squares graphic"
               position="absolute"
@@ -100,7 +100,7 @@ export default function AboutPage() {
             />
             <Stack position="relative">
               <Heading as="h2">Our Team</Heading>
-              <SimpleGrid columns={{base: 1, sm: 2, lg: 1}} spacing={8}>
+              <SimpleGrid columns={{ base: 1, sm: 2, lg: 1 }} spacing={8}>
                 <HStack>
                   <Avatar src="/images/amy-thompson.jpg" size="lg" />
                   <Stack spacing={0}>

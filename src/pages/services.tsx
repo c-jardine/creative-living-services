@@ -17,7 +17,10 @@ export default function ServicesPage() {
   return (
     <>
       <Head>
-        <title>Services for developmental or cognitive disabilities</title>
+        <title>
+          Services for developmental or cognitive disabilities | Creative Living
+          Services
+        </title>
         <meta
           name="description"
           content="Our services support individuals with developmental or cognitive disabilities in achieving greater independence and enhancing their quality of life."

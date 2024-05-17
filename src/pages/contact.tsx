@@ -8,7 +8,7 @@ export default function ContactPage() {
   return (
     <>
       <Head>
-        <title>Contact Creative Living Services</title>
+        <title>Get in contact with us | Creative Living Services</title>
         <meta
           name="description"
           content="We want to know how we can serve you better. Feel free to message us about how we can help you, and we'll respond as quickly as possible."

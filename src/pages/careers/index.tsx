@@ -17,7 +17,7 @@ export default function CareersPage() {
         <title>Careers at Creative Living Services</title>
         <meta
           name="description"
-          content="Providing homemaker care, transportation, vocational habilitation, and adult day services for individuals with cognitive or developmental disabilities."
+          content="Explore rewarding career opportunities at Creative Living Services, where you'll provide personalized care and support for individuals with developmental disabilities."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
