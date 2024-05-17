@@ -11,10 +11,22 @@ import {
 } from "@chakra-ui/react";
 import Head from "next/head";
 import NextLink from "next/link";
-import { FaAmbulance, FaBriefcase, FaHome } from "react-icons/fa";
+import React from "react";
+import {
+  FaAmbulance,
+  FaBriefcase,
+  FaChevronRight,
+  FaHome,
+} from "react-icons/fa";
 import { FaHandsAslInterpreting } from "react-icons/fa6";
 
 export default function HomePage() {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    setTimeout(() => setIsOpen(true), 1000);
+  }, []);
+
   return (
     <>
       <Head>
@@ -30,43 +42,47 @@ export default function HomePage() {
         <Image
           src="/images/home-hero.jpg"
           alt=""
-          h="75vh"
+          h={{ base: "35vh", sm: "45vh", md: "55vh", lg: "75vh" }}
           w="full"
           objectFit="cover"
         />
         <Stack
-          position="absolute"
-          top="50%"
-          left={16}
-          rounded="xl"
-          transform="translateY(-50%)"
-          bg="blue.600"
-          px={16}
+          position={{ lg: "absolute" }}
+          top={{ lg: "75%" }}
+          left={{ lg: 16 }}
+          transform={{ lg: "translateY(-50%)" }}
+          rounded={{ lg: "xl" }}
+          px={{ base: 4, sm: 8, md: 16 }}
           py={8}
-          maxW="container.sm"
-          shadow="dark-lg"
+          bg="blue.100"
+          maxW={{ lg: "container.sm" }}
+          shadow={{ lg: "dark-lg" }}
         >
-          <Text color="white" fontWeight="bold" fontSize="2xl">
+          <Text color="blue.950" fontWeight="bold" fontSize="2xl">
             Celebrating our differences
           </Text>
-          <Text color="blue.100">
+          <Text color="blackAlpha.800">
             We give back to our community rather than take from it. Creative
             Living Services is a place everyone can call home!
           </Text>
           <Link
             as={NextLink}
-            href="/about"
-            variant="outline"
+            href="#main-content"
+            variant="navLinkOutline"
+            display="flex"
             mt={4}
             alignSelf="center"
+            alignItems="center"
+            gap={2}
           >
             Learn more
+            <Icon as={FaChevronRight} />
           </Link>
         </Stack>
       </Box>
       <Stack spacing={16}>
         <Container as={Stack} spacing={8} maxW="container.xl">
-          <Heading as="h1">
+          <Heading id="main-content" as="h1">
             Services for individuals with developmental or cognitive
             disabilities
           </Heading>
