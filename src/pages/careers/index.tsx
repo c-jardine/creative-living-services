@@ -14,10 +14,10 @@ export default function CareersPage() {
   return (
     <>
       <Head>
-        <title>Careers at Creative Living Services</title>
+        <title>Explore careers at Creative Living Services</title>
         <meta
           name="description"
-          content="Explore rewarding career opportunities at Creative Living Services, where you'll provide personalized care and support for individuals with developmental disabilities."
+          content="Explore career opportunities at Creative Living Services, where you'll provide personalized care for individuals with developmental disabilities."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
