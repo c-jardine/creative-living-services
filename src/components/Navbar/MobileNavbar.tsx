@@ -17,7 +17,7 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import React from "react";
-import { FaEnvelope, FaFacebook, FaHamburger, FaPhone } from "react-icons/fa";
+import { FaBars, FaEnvelope, FaFacebook, FaPhone } from "react-icons/fa";
 import { Logo } from "../Logo";
 
 export default function MobileNavbar() {
@@ -34,7 +34,7 @@ export default function MobileNavbar() {
         <HStack justifyContent="space-between">
           <Logo />
           <IconButton
-            icon={<Icon as={FaHamburger} strokeWidth={3} />}
+            icon={<Icon as={FaBars} strokeWidth={3} />}
             aria-label="Toggle navigation"
             onClick={onOpen}
             variant="outline"
