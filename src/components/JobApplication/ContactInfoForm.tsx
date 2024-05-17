@@ -2,7 +2,6 @@ import { phoneMaskOptions, statesList } from "@/constants";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { saveContactInfo } from "@/store/reducers";
 import {
-  Flex,
   FormControl,
   FormErrorMessage,
   FormLabel,
@@ -15,9 +14,9 @@ import {
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMaskito } from "@maskito/react";
-import { US } from "country-flag-icons/react/3x2";
 import { Controller, useForm } from "react-hook-form";
 import { Heading } from "../Heading";
+import { InputFlag } from "../InputFlag";
 import { useStepperContext } from "./context";
 import FormNavButtons from "./FormNavButtons";
 import { contactInfoSchema } from "./schemas";
@@ -50,19 +49,6 @@ export default function ContactInfoForm() {
   function onSubmit(data: ContactInfoType) {
     dispatch(saveContactInfo(data));
     goToNext();
-  }
-
-  function Flag() {
-    return (
-      <Flex w={6} h={6} rounded="full" overflow="hidden" shadow="md">
-        <US
-          title="United States"
-          style={{
-            transform: "scale(1.75)",
-          }}
-        />
-      </Flex>
-    );
   }
 
   return (
@@ -131,7 +117,11 @@ export default function ContactInfoForm() {
 
         <FormControl gridColumn="1 / span 6" isInvalid={!!errors.email}>
           <FormLabel fontSize="sm">Email</FormLabel>
-          <Input inputMode="email" autoCapitalize='none' {...register("email")} />
+          <Input
+            inputMode="email"
+            autoCapitalize="none"
+            {...register("email")}
+          />
           {errors.email && (
             <FormErrorMessage fontSize="xs">
               {errors.email.message}
@@ -157,7 +147,7 @@ export default function ContactInfoForm() {
                   value={value}
                 />
                 <InputRightElement pointerEvents="none">
-                  <Flag />
+                  <InputFlag />
                 </InputRightElement>
               </InputGroup>
             )}
@@ -189,7 +179,7 @@ export default function ContactInfoForm() {
                   value={value}
                 />
                 <InputRightElement pointerEvents="none">
-                  <Flag />
+                  <InputFlag />
                 </InputRightElement>
               </InputGroup>
             )}

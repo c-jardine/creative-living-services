@@ -1,7 +1,6 @@
 import { phoneMaskOptions } from "@/constants";
 import {
   Button,
-  Flex,
   FormControl,
   FormErrorMessage,
   FormLabel,
@@ -13,8 +12,8 @@ import {
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMaskito } from "@maskito/react";
-import { US } from "country-flag-icons/react/3x2";
 import { Controller, useForm } from "react-hook-form";
+import { InputFlag } from "../InputFlag";
 import contactFormSchema from "./schemas";
 import { ContactFormType } from "./types";
 
@@ -43,19 +42,6 @@ export default function ContactForm() {
   function onSubmit(data: ContactFormType) {
     alert(JSON.stringify(data));
     reset(defaultValues);
-  }
-
-  function Flag() {
-    return (
-      <Flex w={6} h={6} rounded="full" overflow="hidden" shadow="md">
-        <US
-          title="United States"
-          style={{
-            transform: "scale(1.75)",
-          }}
-        />
-      </Flex>
-    );
   }
 
   return (
@@ -94,7 +80,7 @@ export default function ContactForm() {
                 value={value}
               />
               <InputRightElement pointerEvents="none">
-                <Flag />
+                <InputFlag />
               </InputRightElement>
             </InputGroup>
           )}
