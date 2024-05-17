@@ -21,9 +21,8 @@ export default function ApplyPage() {
             applicants will be contacted for interviews.
           </Text>
         </Stack>
-
-        <JobApplication />
       </Container>
+      <JobApplication />
     </>
   );
 }

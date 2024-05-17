@@ -87,8 +87,15 @@ export default function JobApplication() {
 
   return (
     <StepperContext.Provider value={{ stepper, size: steps.length }}>
-      {_renderStepper()}
-      <Container as={Stack} p={0} spacing={8} maxW="lg">
+      <Container maxW="container.md">{_renderStepper()}</Container>
+      <Container
+        as={Stack}
+        p={{ base: 4, sm: 8 }}
+        spacing={8}
+        rounded={{ sm: "2xl" }}
+        maxW="container.sm"
+        bg="white"
+      >
         {_renderCurrentForm()}
       </Container>
     </StepperContext.Provider>
