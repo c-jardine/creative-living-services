@@ -91,7 +91,7 @@ export default function EmploymentHistoryForm() {
               <Input {...register(`employmentHistory.${index}.position`)} />
               {errors.employmentHistory?.[index]?.position && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.employmentHistory?.[index]?.position.message}
+                  {errors.employmentHistory?.[index]?.position?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -108,7 +108,7 @@ export default function EmploymentHistoryForm() {
               />
               {errors.employmentHistory?.[index]?.startDate && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.employmentHistory?.[index]?.startDate.message}
+                  {errors.employmentHistory?.[index]?.startDate?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -124,7 +124,7 @@ export default function EmploymentHistoryForm() {
               />
               {errors.employmentHistory?.[index]?.endDate && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.employmentHistory?.[index]?.endDate.message}
+                  {errors.employmentHistory?.[index]?.endDate?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -138,7 +138,7 @@ export default function EmploymentHistoryForm() {
               <Input {...register(`employmentHistory.${index}.company`)} />
               {errors.employmentHistory?.[index]?.company && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.employmentHistory?.[index]?.company.message}
+                  {errors.employmentHistory?.[index]?.company?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -151,7 +151,7 @@ export default function EmploymentHistoryForm() {
               <Input {...register(`employmentHistory.${index}.address`)} />
               {errors.employmentHistory?.[index]?.address && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.employmentHistory?.[index]?.address.message}
+                  {errors.employmentHistory?.[index]?.address?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -164,7 +164,7 @@ export default function EmploymentHistoryForm() {
               <Input {...register(`employmentHistory.${index}.city`)} />
               {errors.employmentHistory?.[index]?.city && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.employmentHistory?.[index]?.city.message}
+                  {errors.employmentHistory?.[index]?.city?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -189,7 +189,7 @@ export default function EmploymentHistoryForm() {
               />
               {errors.employmentHistory?.[index]?.state && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.employmentHistory?.[index]?.state.message}
+                  {errors.employmentHistory?.[index]?.state?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -205,7 +205,7 @@ export default function EmploymentHistoryForm() {
               />
               {errors.employmentHistory?.[index]?.zipCode && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.employmentHistory?.[index]?.zipCode.message}
+                  {errors.employmentHistory?.[index]?.zipCode?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -221,7 +221,7 @@ export default function EmploymentHistoryForm() {
               />
               {errors.employmentHistory?.[index]?.supervisorName && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.employmentHistory?.[index]?.supervisorName.message}
+                  {errors.employmentHistory?.[index]?.supervisorName?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -236,7 +236,7 @@ export default function EmploymentHistoryForm() {
               />
               {errors.employmentHistory?.[index]?.supervisorNumber && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.employmentHistory?.[index]?.supervisorNumber.message}
+                  {errors.employmentHistory?.[index]?.supervisorNumber?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -253,7 +253,7 @@ export default function EmploymentHistoryForm() {
               />
               {errors.employmentHistory?.[index]?.salary && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.employmentHistory?.[index]?.salary.message}
+                  {errors.employmentHistory?.[index]?.salary?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -269,7 +269,7 @@ export default function EmploymentHistoryForm() {
               />
               {errors.employmentHistory?.[index]?.weeklyHours && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.employmentHistory?.[index]?.weeklyHours.message}
+                  {errors.employmentHistory?.[index]?.weeklyHours?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -283,7 +283,7 @@ export default function EmploymentHistoryForm() {
               <Textarea {...register(`employmentHistory.${index}.duties`)} />
               {errors.employmentHistory?.[index]?.duties && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.employmentHistory?.[index]?.duties.message}
+                  {errors.employmentHistory?.[index]?.duties?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -299,7 +299,7 @@ export default function EmploymentHistoryForm() {
               />
               {errors.employmentHistory?.[index]?.reasonForLeaving && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.employmentHistory?.[index]?.reasonForLeaving.message}
+                  {errors.employmentHistory?.[index]?.reasonForLeaving?.message}
                 </FormErrorMessage>
               )}
             </FormControl>

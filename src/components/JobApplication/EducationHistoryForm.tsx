@@ -96,7 +96,7 @@ export default function EducationHistoryForm() {
               />
               {errors.educationHistory?.[index]?.institution && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.educationHistory?.[index]?.institution.message}
+                  {errors.educationHistory?.[index]?.institution?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -110,7 +110,7 @@ export default function EducationHistoryForm() {
               <Input {...register(`educationHistory.${index}.name`)} />
               {errors.educationHistory?.[index]?.name && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.educationHistory?.[index]?.name.message}
+                  {errors.educationHistory?.[index]?.name?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -124,7 +124,7 @@ export default function EducationHistoryForm() {
               <Input {...register(`educationHistory.${index}.degree`)} />
               {errors.educationHistory?.[index]?.degree && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.educationHistory?.[index]?.degree.message}
+                  {errors.educationHistory?.[index]?.degree?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -158,7 +158,7 @@ export default function EducationHistoryForm() {
               </HStack>
               {errors.educationHistory?.[index]?.isComplete && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.educationHistory?.[index]?.isComplete.message}
+                  {errors.educationHistory?.[index]?.isComplete?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -172,7 +172,7 @@ export default function EducationHistoryForm() {
               <Input {...register(`educationHistory.${index}.city`)} />
               {errors.educationHistory?.[index]?.city && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.educationHistory?.[index]?.city.message}
+                  {errors.educationHistory?.[index]?.city?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
@@ -197,7 +197,7 @@ export default function EducationHistoryForm() {
               />
               {errors.educationHistory?.[index]?.state && (
                 <FormErrorMessage fontSize="xs">
-                  {errors.educationHistory?.[index]?.state.message}
+                  {errors.educationHistory?.[index]?.state?.message}
                 </FormErrorMessage>
               )}
             </FormControl>
