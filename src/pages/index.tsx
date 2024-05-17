@@ -86,19 +86,19 @@ export default function HomePage() {
             Services for individuals with developmental or cognitive
             disabilities
           </Heading>
-          <Text>
+          <Text color='gray.600'>
             Creative Living Services is a dedicated provider of support for
             individuals with developmental or cognitive disabilities. Our
             services include homemaker personal care, medical and non-medical
             transportation, vocational habilitation, and adult day services.
           </Text>
-          <Text>
+          <Text color='gray.600'>
             Our team of highly trained professionals works diligently to execute
             individualized plans, helping our consumers lead fulfilling lives.
             Committed to excellence, we invite you to learn more about our
             company, staff, and the individuals we support.
           </Text>
-          <Text>
+          <Text color='gray.600'>
             Contact us today to discover how Creative Living Services can make a
             difference in your life.
           </Text>

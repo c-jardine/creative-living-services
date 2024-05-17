@@ -12,7 +12,12 @@ export default function Heading({
   ...props
 }: HeadingProps & { children: React.ReactNode }) {
   return (
-    <ChakraHeading fontFamily={montserrat.style.fontFamily} {...props}>
+    <ChakraHeading
+      fontFamily={montserrat.style.fontFamily}
+      color="blue.950"
+      _dark={{ color: "blue.50" }}
+      {...props}
+    >
       {children}
     </ChakraHeading>
   );

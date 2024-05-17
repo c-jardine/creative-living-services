@@ -32,7 +32,7 @@ export default function ServicesPage() {
             Services for individuals with developmental or cognitive
             disabilities
           </Heading>
-          <Text>
+          <Text color='gray.600'>
             Based in Toledo, OH, our comprehensive range of services is designed
             to support individuals with developmental or cognitive disabilities
             in achieving greater independence and improving their quality of
@@ -108,8 +108,8 @@ export default function ServicesPage() {
           shadow="lg"
         >
           <Container maxW="1920px">
-            <SimpleGrid columns={{ base: 1, md: 2, xl: 5 }} spacing={8}>
-              <Stack gridColumn={{ md: "1", xl: "1" }}>
+            <SimpleGrid columns={{ base: 1, xl: 5 }} spacing={8}>
+              <Stack>
                 <Heading as="h4" fontSize="lg" color="blue.50">
                   Assessment
                 </Heading>
@@ -118,7 +118,7 @@ export default function ServicesPage() {
                   purpose of developing an Individual Service Plan (ISP).
                 </Text>
               </Stack>
-              <Stack gridColumn={{ md: "2", xl: "2" }}>
+              <Stack>
                 <Heading as="h4" fontSize="lg" color="blue.50">
                   Personal Care
                 </Heading>
@@ -128,7 +128,7 @@ export default function ServicesPage() {
                   dressing.
                 </Text>
               </Stack>
-              <Stack gridColumn={{ md: "1 / span 2", xl: "3" }}>
+              <Stack>
                 <Heading as="h4" fontSize="lg" color="blue.50">
                   Skill Reinforcement
                 </Heading>
@@ -138,7 +138,7 @@ export default function ServicesPage() {
                   communication and mobility devices.
                 </Text>
               </Stack>
-              <Stack gridColumn={{ md: "1 / span 2", xl: "4" }}>
+              <Stack>
                 <Heading as="h4" fontSize="lg" color="blue.50">
                   Training in Self-Determination
                 </Heading>
@@ -148,7 +148,7 @@ export default function ServicesPage() {
                   individuals to become more independent.
                 </Text>
               </Stack>
-              <Stack gridColumn={{ md: "1 / span 2", xl: "5" }}>
+              <Stack>
                 <Heading as="h4" fontSize="lg" color="blue.50">
                   Recreation and Leisure
                 </Heading>
@@ -159,10 +159,7 @@ export default function ServicesPage() {
                 </Text>
               </Stack>
 
-              <Stack
-                gridColumn={{ md: "1 / span 2", xl: "1 / span 5" }}
-                alignItems="center"
-              >
+              <Stack gridColumn={{ xl: "1 / span 5" }} alignItems="center">
                 <Link
                   as={NextLink}
                   href="/ads-vh"
