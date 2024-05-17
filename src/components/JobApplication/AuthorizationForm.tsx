@@ -1,4 +1,12 @@
-import { useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import {
+  saveAdditionalInfo,
+  saveCertifications,
+  saveContactInfo,
+  saveEducationHistory,
+  saveEmploymentHistory,
+  savePersonalDetails,
+} from "@/store/reducers";
 import {
   FormControl,
   FormErrorMessage,
@@ -11,6 +19,8 @@ import {
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { format } from "date-fns";
+import { useRouter } from "next/router";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { Heading } from "../Heading";
 import FormNavButtons from "./FormNavButtons";
@@ -23,7 +33,12 @@ const defaultValues = {
 };
 
 export default function AuthorizationForm() {
+  const [isLoading, setIsLoading] = React.useState(false);
+
   const toast = useToast();
+  const router = useRouter();
+
+  const dispatch = useAppDispatch();
 
   const {
     personalDetails,
@@ -45,6 +60,7 @@ export default function AuthorizationForm() {
 
   async function onSubmit(data: AuthorizationSignatureType) {
     try {
+      setIsLoading(true);
       const formData = {
         personalDetails,
         contactInfo,
@@ -67,6 +83,50 @@ export default function AuthorizationForm() {
         description: "Job application successfully submitted!",
         status: "success",
       });
+
+      dispatch(
+        savePersonalDetails({
+          firstName: "",
+          middleInitial: "",
+          lastName: "",
+          birthday: "",
+          isOver18: "No",
+        })
+      );
+      dispatch(
+        saveContactInfo({
+          addressLine1: "",
+          addressLine2: "",
+          city: "",
+          state: "",
+          zipCode: "",
+          email: "",
+          phone: "",
+          additionalPhone: "",
+        })
+      );
+      dispatch(
+        saveAdditionalInfo({
+          driversLicense: "",
+          isFelon: "No",
+          isAuthorizedToWork: "No",
+          isWillingToBackgroundCheck: "No",
+          isFormerApplicant: "No",
+          isDriver: "No",
+          isGraduate: "No",
+        })
+      );
+      dispatch(saveEmploymentHistory({ employmentHistory: [] }));
+      dispatch(saveEducationHistory({ educationHistory: [] }));
+      dispatch(
+        saveCertifications({
+          hasCPR: "No",
+          hasFirstAid: "No",
+          hasOralTopical: "No",
+          other: "",
+        })
+      );
+      await router.push("/");
     } catch (error) {
       if (error instanceof Error) {
         toast({
@@ -76,6 +136,7 @@ export default function AuthorizationForm() {
         });
       }
     }
+    setIsLoading(false);
   }
 
   return (
@@ -131,7 +192,7 @@ export default function AuthorizationForm() {
         </FormControl>
       </SimpleGrid>
 
-      <FormNavButtons />
+      <FormNavButtons isLoading={isLoading} />
     </Stack>
   );
 }

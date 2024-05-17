@@ -2,8 +2,12 @@ import { Button, HStack, StackProps } from "@chakra-ui/react";
 import { useStepperContext } from "./context";
 
 export default function FormNavButtons({
+  nextDisabled = false,
+  isLoading = false,
   containerProps,
 }: {
+  nextDisabled?: boolean;
+  isLoading?: boolean;
   containerProps?: StackProps;
 }) {
   const {
@@ -27,7 +31,8 @@ export default function FormNavButtons({
       <Button
         type="submit"
         colorScheme="blue"
-        // isDisabled={!form.formState.isValid}
+        isDisabled={nextDisabled}
+        isLoading={isLoading}
       >
         {activeStep === size - 1 ? "Submit" : "Next"}
       </Button>
