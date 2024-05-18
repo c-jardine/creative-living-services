@@ -58,7 +58,8 @@ export default function HomePage() {
           <Link
             as={NextLink}
             href="#main-content"
-            variant="navLinkOutline"
+            aria-label="Learn more about what Creative Living Services does"
+            variant="primary"
             display="flex"
             mt={4}
             alignSelf="center"
@@ -137,11 +138,12 @@ export default function HomePage() {
             <Link
               as={NextLink}
               href="/services"
-              variant="navLinkOutline"
+              aria-label="Learn more about the services we provide."
+              variant="primary"
               w="fit-content"
               alignSelf="center"
             >
-              Learn more
+              About our services
             </Link>
           </Container>
         </Box>

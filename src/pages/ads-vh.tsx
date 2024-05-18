@@ -131,7 +131,7 @@ export default function AdsVhPage() {
             <Link
               as={NextLink}
               href="/contact"
-              variant="navLinkOutline"
+              variant="primary"
               mt={8}
               display="flex"
               alignItems="center"

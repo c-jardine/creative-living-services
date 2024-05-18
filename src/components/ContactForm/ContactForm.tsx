@@ -7,6 +7,7 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  Link,
   Stack,
   Textarea,
   useToast,
@@ -126,9 +127,9 @@ export default function ContactForm() {
           </FormErrorMessage>
         )}
       </FormControl>
-      <Button type="submit" colorScheme="blue">
+      <Link as={Button} type="submit" variant="primary">
         Send message
-      </Button>
+      </Link>
     </Stack>
   );
 }

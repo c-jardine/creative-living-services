@@ -96,49 +96,49 @@ export default function ServicesPage() {
           <Container maxW="1920px">
             <SimpleGrid columns={{ base: 1, xl: 5 }} spacing={8}>
               <Stack>
-                <Heading as="h4" fontSize="lg" color="blue.50">
+                <Heading as="h3" fontSize="lg" color="blue.50">
                   Assessment
                 </Heading>
-                <Text fontSize="sm" color="blue.100">
+                <Text fontSize="sm" color="blue.50">
                   Assessment can be formal or informal and is conducted for the
                   purpose of developing an Individual Service Plan (ISP).
                 </Text>
               </Stack>
               <Stack>
-                <Heading as="h4" fontSize="lg" color="blue.50">
+                <Heading as="h3" fontSize="lg" color="blue.50">
                   Personal Care
                 </Heading>
-                <Text fontSize="sm" color="blue.100">
+                <Text fontSize="sm" color="blue.50">
                   Personal care services include assistance with personal
                   hygiene, eating, communication, mobility, toileting, and
                   dressing.
                 </Text>
               </Stack>
               <Stack>
-                <Heading as="h4" fontSize="lg" color="blue.50">
+                <Heading as="h3" fontSize="lg" color="blue.50">
                   Skill Reinforcement
                 </Heading>
-                <Text fontSize="sm" color="blue.100">
+                <Text fontSize="sm" color="blue.50">
                   Skill reinforcement involves implementing behavioral
                   intervention plans and providing help with the use of
                   communication and mobility devices.
                 </Text>
               </Stack>
               <Stack>
-                <Heading as="h4" fontSize="lg" color="blue.50">
+                <Heading as="h3" fontSize="lg" color="blue.50">
                   Training in Self-Determination
                 </Heading>
-                <Text fontSize="sm" color="blue.100">
+                <Text fontSize="sm" color="blue.50">
                   Training in self-determination includes developing
                   self-advocacy skills and acquiring abilities that enable
                   individuals to become more independent.
                 </Text>
               </Stack>
               <Stack>
-                <Heading as="h4" fontSize="lg" color="blue.50">
+                <Heading as="h3" fontSize="lg" color="blue.50">
                   Recreation and Leisure
                 </Heading>
-                <Text fontSize="sm" color="blue.100">
+                <Text fontSize="sm" color="blue.50">
                   Recreation and leisure activities include therapeutic supports
                   identified in the ISP that help to develop and maintain social
                   relationships and family contacts.
@@ -178,7 +178,7 @@ export default function ServicesPage() {
                 minH={{ base: 72, md: "39rem" }}
               />
               <Stack>
-                <Heading as="h1">Supported employment services</Heading>
+                <Heading as="h2">Supported employment services</Heading>
                 <Text color="gray.700">
                   Supported employment services offer intensive, ongoing support
                   to help individuals perform work in regular employment
@@ -205,7 +205,7 @@ export default function ServicesPage() {
             <SimpleGrid columns={{ base: 1, lg: 2 }} gap={{ base: 8, sm: 16 }}>
               <Stack gridColumn={{ lg: "2" }} spacing={8}>
                 <Stack>
-                  <Heading as="h4" fontSize="lg" color={{ lg: "blue.900" }}>
+                  <Heading as="h3" fontSize="lg" color={{ lg: "blue.900" }}>
                     Enclave
                   </Heading>
                   <Text
@@ -219,7 +219,7 @@ export default function ServicesPage() {
                 </Stack>
 
                 <Stack>
-                  <Heading as="h4" fontSize="lg" color={{ lg: "blue.900" }}>
+                  <Heading as="h3" fontSize="lg" color={{ lg: "blue.900" }}>
                     Community
                   </Heading>
                   <Text

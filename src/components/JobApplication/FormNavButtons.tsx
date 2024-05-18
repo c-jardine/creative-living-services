@@ -1,4 +1,4 @@
-import { Button, HStack, StackProps } from "@chakra-ui/react";
+import { Button, HStack, Link, StackProps } from "@chakra-ui/react";
 import { useStepperContext } from "./context";
 
 export default function FormNavButtons({
@@ -28,14 +28,15 @@ export default function FormNavButtons({
       )}
 
       {/* Show next on all but the last step */}
-      <Button
+      <Link
+        as={Button}
         type="submit"
-        colorScheme="blue"
+        variant="primary"
         isDisabled={nextDisabled}
         isLoading={isLoading}
       >
         {activeStep === size - 1 ? "Submit" : "Next"}
-      </Button>
+      </Link>
     </HStack>
   );
 }

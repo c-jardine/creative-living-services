@@ -9,6 +9,7 @@ export default function Logo({
   return (
     <Stack
       as={NextLink}
+      aria-label="Creative Living Services logo that navigates to the home page."
       href="/"
       spacing={0}
       alignItems="center"

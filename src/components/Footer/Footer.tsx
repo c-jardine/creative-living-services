@@ -6,6 +6,7 @@ import {
   Link,
   SimpleGrid,
   Stack,
+  StackProps,
   Text,
 } from "@chakra-ui/react";
 import { Montserrat } from "next/font/google";
@@ -32,18 +33,20 @@ function CustomLink({
   icon,
   isExternal = false,
   children,
+  ...rest
 }: {
   href: string;
   icon?: IconType;
   isExternal?: boolean;
   children: string;
-}) {
+} & StackProps) {
   return (
     <HStack
       as={isExternal ? Link : NextLink}
       href={href}
       alignItems="flex-start"
       role="group"
+      {...rest}
     >
       <Icon
         as={icon ? icon : FaChevronRight}
@@ -87,12 +90,39 @@ export default function Footer() {
                 Links
               </Heading>
               <Stack>
-                <CustomLink href="/">Home</CustomLink>
-                <CustomLink href="/services">Services</CustomLink>
-                <CustomLink href="/ads-vh">ADS/VH</CustomLink>
-                <CustomLink href="/about">About</CustomLink>
-                <CustomLink href="/contact">Contact</CustomLink>
-                <CustomLink href="/careers">Careers</CustomLink>
+                <CustomLink href="/" aria-label="Navigate to the home page">
+                  Home
+                </CustomLink>
+                <CustomLink
+                  href="/services"
+                  aria-label="Navigate to the services page"
+                >
+                  Services
+                </CustomLink>
+                <CustomLink
+                  href="/ads-vh"
+                  aria-label="Navigate to the adult day services and vocational habilitation page"
+                >
+                  ADS/VH
+                </CustomLink>
+                <CustomLink
+                  href="/about"
+                  aria-label="Navigate to the about us page"
+                >
+                  About
+                </CustomLink>
+                <CustomLink
+                  href="/contact"
+                  aria-label="Navigate to the contact us page"
+                >
+                  Contact
+                </CustomLink>
+                <CustomLink
+                  href="/careers"
+                  aria-label="Navigate to the careers page"
+                >
+                  Careers
+                </CustomLink>
               </Stack>
             </Stack>
 
@@ -108,6 +138,7 @@ export default function Footer() {
               <Stack>
                 <CustomLink
                   href="https://lucasdd.org"
+                  aria-label="Go to the Lucas County Board of Developmental Disabilities website."
                   icon={FaExternalLinkAlt}
                   isExternal
                 >
@@ -132,12 +163,18 @@ export default function Footer() {
                 </Stack>
               </HStack>
 
-              <CustomLink href="tel:+1419724-4690" icon={FaPhone} isExternal>
+              <CustomLink
+                href="tel:+1419724-4690"
+                aria-label="Call Creative Living Services at +1 (419) 724-4690"
+                icon={FaPhone}
+                isExternal
+              >
                 (419) 724-4690
               </CustomLink>
 
               <CustomLink
                 href="mailto:creativelivingservice@gmail.com"
+                aria-label="Email Creative Living Services at creativelivingservice@gmail.com"
                 icon={FaEnvelope}
                 isExternal
               >

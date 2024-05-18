@@ -3,6 +3,7 @@ import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
 const base = defineStyle({
   px: 4,
   py: 2,
+  rounded: "lg",
   fontWeight: "bold",
   textTransform: "uppercase",
   letterSpacing: "wide",
@@ -31,7 +32,6 @@ const navLinkOutline = defineStyle({
   py: 2,
   borderWidth: "2px",
   borderColor: "blue.600",
-  rounded: "lg",
   color: "blue.600",
   _hover: {
     ...base._hover,
@@ -48,7 +48,6 @@ const outline = defineStyle({
   ...base,
   borderWidth: "2px",
   borderColor: "white",
-  rounded: "lg",
   color: "white",
   _hover: {
     ...base._hover,
@@ -61,8 +60,17 @@ const outline = defineStyle({
   },
 });
 
+const primary = defineStyle({
+  ...base,
+  bg: "blue.600",
+  color: "white",
+  _hover: {
+    bg: "blue.500",
+  },
+});
+
 const linkTheme = defineStyleConfig({
-  variants: { navLink, navLinkOutline, outline },
+  variants: { navLink, navLinkOutline, primary, outline },
 });
 
 export default linkTheme;

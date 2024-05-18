@@ -23,6 +23,7 @@ export default function DesktopNavbar() {
             <Link
               as={NextLink}
               href="/"
+              aria-label="Navigate to the home page."
               variant="navLink"
               color={getLinkColor("/")}
             >
@@ -31,6 +32,7 @@ export default function DesktopNavbar() {
             <Link
               as={NextLink}
               href="/services"
+              aria-label="Navigate to the services page."
               variant="navLink"
               color={getLinkColor("/services")}
             >
@@ -40,6 +42,7 @@ export default function DesktopNavbar() {
               as={NextLink}
               href="/ads-vh"
               variant="navLink"
+              aria-label="Navigate to the adult day services and vocational habilitation page."
               color={getLinkColor("/ads-vh")}
             >
               ADS/VH
@@ -47,6 +50,7 @@ export default function DesktopNavbar() {
             <Link
               as={NextLink}
               href="/about"
+              aria-label="Navigate to the about us page"
               variant="navLink"
               color={getLinkColor("/about")}
             >
@@ -55,6 +59,7 @@ export default function DesktopNavbar() {
             <Link
               as={NextLink}
               href="/contact"
+              aria-label="Navigate to the contact us page"
               variant="navLink"
               color={getLinkColor("/contact")}
             >
@@ -63,6 +68,7 @@ export default function DesktopNavbar() {
             <Link
               as={NextLink}
               href="/careers"
+              aria-label="Navigate to the careers page"
               variant="navLinkOutline"
               bg={router.asPath === "/careers" ? "blue.600" : "white"}
               color={router.asPath === "/careers" ? "white" : "blue.600"}

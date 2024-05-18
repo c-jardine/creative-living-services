@@ -98,7 +98,11 @@ export default function AboutPage() {
               <Heading as="h2">Our Team</Heading>
               <SimpleGrid columns={{ base: 1, sm: 2, lg: 1 }} spacing={8}>
                 <HStack>
-                  <Avatar src="/images/amy-thompson.jpg" size="lg" />
+                  <Avatar
+                    src="/images/amy-thompson.jpg"
+                    name="Amy Thompson, CEO/Director"
+                    size="lg"
+                  />
                   <Stack spacing={0}>
                     <Text fontWeight="bold">Amy Thompson</Text>
                     <Text fontSize="sm" color="gray.600">
@@ -107,7 +111,11 @@ export default function AboutPage() {
                   </Stack>
                 </HStack>
                 <HStack>
-                  <Avatar src="/images/ashley-taylor.jpg" size="lg" />
+                  <Avatar
+                    src="/images/ashley-taylor.jpg"
+                    name="Ashley Taylor, Assistant Director"
+                    size="lg"
+                  />
                   <Stack spacing={0}>
                     <Text fontWeight="bold">Ashley Taylor</Text>
                     <Text fontSize="sm" color="gray.600">
