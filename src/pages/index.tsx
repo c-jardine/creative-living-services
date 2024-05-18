@@ -3,6 +3,7 @@ import { HeadMetadata } from "@/components/HeadMetadata";
 import {
   Box,
   Container,
+  HStack,
   Icon,
   Image,
   Link,
@@ -11,15 +12,75 @@ import {
   Text,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import {
-  FaAmbulance,
-  FaBriefcase,
-  FaChevronRight,
-  FaHome,
-} from "react-icons/fa";
+import { FaAmbulance, FaChevronRight, FaHome } from "react-icons/fa";
 import { FaHandsAslInterpreting } from "react-icons/fa6";
+import { IconType } from "react-icons/lib";
+import { PiBroomFill } from "react-icons/pi";
 
 export default function HomePage() {
+  function Card({
+    color,
+    icon,
+    title,
+    description,
+    href,
+  }: {
+    color: string;
+    icon: IconType;
+    title: string;
+    description: string;
+    href: string;
+  }) {
+    return (
+      <Stack
+        as={NextLink}
+        href={href}
+        p={{ base: 4, sm: 8 }}
+        rounded="2xl"
+        bg="blue.50"
+        role="group"
+      >
+        <Icon as={icon} color={`${color}.600`} boxSize={8} />
+        <Text
+          flexGrow={1}
+          fontWeight="bold"
+          color="blue.900"
+          transition="250ms cubic-bezier(0.25, 1, 0.5, 1)"
+          _groupHover={{
+            color: "blue.600",
+          }}
+        >
+          {title}
+        </Text>
+        <Text mt={2} fontSize="sm" color="blue.800">
+          {description}
+        </Text>
+        <HStack mt={2} alignItems="center">
+          <Text
+            fontSize="sm"
+            fontWeight="bold"
+            color="blue.900"
+            transition="250ms cubic-bezier(0.25, 1, 0.5, 1)"
+            _groupHover={{
+              color: "blue.600",
+            }}
+          >
+            Read more
+          </Text>
+          <Icon
+            as={FaChevronRight}
+            opacity={0}
+            transition="250ms cubic-bezier(0.25, 1, 0.5, 1)"
+            _groupHover={{
+              color: "blue.600",
+              transform: "translateX(1rem)",
+              opacity: 1,
+            }}
+          />
+        </HStack>
+      </Stack>
+    );
+  }
   return (
     <>
       <HeadMetadata
@@ -61,18 +122,19 @@ export default function HomePage() {
             aria-label="Learn more about what Creative Living Services does"
             variant="primary"
             display="flex"
-            mt={4}
-            alignSelf="center"
             alignItems="center"
             gap={2}
+            mt={4}
+            w="fit-content"
           >
             Learn more
             <Icon as={FaChevronRight} />
           </Link>
         </Stack>
       </Box>
+
       <Stack spacing={16}>
-        <Container as={Stack} spacing={8} maxW="container.xl">
+        <Container as={Stack} maxW="container.md">
           <Heading id="main-content" as="h1">
             Services for individuals with developmental or cognitive
             disabilities
@@ -93,61 +155,84 @@ export default function HomePage() {
             Contact us today to discover how Creative Living Services can make a
             difference in your life.
           </Text>
-
-          {/* <Text>
-            Creative Living Services is a small, but active, company that
-            provides services for individuals with developmental or cognitive
-            disabilities. Our highly trained staff delivers homemaker personal
-            care services, medical and non-medical transportation, vocational
-            habilitation, and adult day services. We work diligently in the
-            execution of individualized plans to help our consumers lead full,
-            rewarding lives. Creative Living Services is committed to
-            excellence, and we invite you to learn more about our company,
-            staff, and the individuals we support!
-          </Text> */}
         </Container>
-        <Box bg="blue.100">
-          <Container as={Stack} py={16} spacing={12} maxW="container.xl">
-            <Heading as="h2" textAlign="center">
-              Services we provide
-            </Heading>
-            <SimpleGrid columns={{ base: 1, sm: 2, lg: 4 }} spacing={12}>
-              <Stack alignItems="center">
-                <Icon as={FaHome} boxSize={12} color="green.500" />
-                <Text textAlign="center">Homemaker personal care services</Text>
-              </Stack>
-              <Stack alignItems="center">
-                <Icon as={FaAmbulance} boxSize={12} color="red.500" />
-                <Text textAlign="center">
-                  Medical and non-medical transportation
-                </Text>
-              </Stack>
-              <Stack alignItems="center">
-                <Icon as={FaBriefcase} boxSize={12} color="orange.500" />
-                <Text textAlign="center">Vocational habilitation</Text>
-              </Stack>
-              <Stack alignItems="center">
-                <Icon
-                  as={FaHandsAslInterpreting}
-                  boxSize={12}
-                  color="purple.500"
-                />
-                <Text textAlign="center">Adult day services</Text>
-              </Stack>
-            </SimpleGrid>
-            <Link
-              as={NextLink}
-              href="/services"
-              aria-label="Learn more about the services we provide."
-              variant="primary"
-              w="fit-content"
-              alignSelf="center"
+
+        <Box bg="white">
+          <Container position="relative" maxW="1920px">
+            <Image
+              display={{ base: "none", md: "block" }}
+              src="/graphics/squares.png"
+              alt="Squares graphic"
+              position="absolute"
+              top={-8}
+              left={0}
+              w={{ sm: "22rem", lg: "26rem" }}
+              transform="rotate(-180deg)"
+            />
+            <Image
+              display={{ base: "none", md: "block" }}
+              src="/graphics/squares.png"
+              alt="Squares graphic"
+              position="absolute"
+              bottom={-8}
+              right={0}
+              w={{ sm: "22rem", lg: "26rem" }}
+            />
+            <Container
+              as={Stack}
+              position="relative"
+              py={16}
+              spacing={12}
+              maxW="container.xl"
             >
-              About our services
-            </Link>
+              <Heading as="h2" textAlign="center">
+                Services we provide
+              </Heading>
+              <SimpleGrid columns={{ base: 1, sm: 2, lg: 4 }} spacing={4}>
+                <Card
+                  color="green"
+                  icon={FaHome}
+                  title="Personal care services"
+                  description="Hygiene, dressing, feeding, and mobility."
+                  href="/services#personal-care-services"
+                />
+                <Card
+                  color="red"
+                  icon={FaAmbulance}
+                  title="Transportation"
+                  description="Medical and non-medical transportation services."
+                  href="/services#transportation"
+                />
+                <Card
+                  color="purple"
+                  icon={FaHandsAslInterpreting}
+                  title="Adult day services"
+                  description="Personal development and social interaction."
+                  href="/services#adult-day-services"
+                />
+                <Card
+                  color="orange"
+                  icon={PiBroomFill}
+                  title="Vocational habilitation"
+                  description="Ongoing support in regular employment settings."
+                  href="/services#vocational-habilitation"
+                />
+              </SimpleGrid>
+              <Link
+                as={NextLink}
+                href="/services"
+                aria-label="Learn more about the services we provide."
+                variant="primary"
+                w="fit-content"
+                alignSelf="center"
+              >
+                About our services
+              </Link>
+            </Container>
           </Container>
         </Box>
-        <Container as={Stack} spacing={8} maxW="container.xl">
+
+        <Container as={Stack} maxW="container.md">
           <Heading as="h2">Our Person-Centered Philosophy</Heading>
           <Text>
             Creative Living Services prioritizes people, adhering to a
