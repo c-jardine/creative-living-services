@@ -69,11 +69,12 @@ export default function HomePage() {
           </Text>
           <Icon
             as={FaChevronRight}
-            opacity={0}
+            color="blue.900"
+            opacity={{ base: 1, sm: 0 }}
             transition="250ms cubic-bezier(0.25, 1, 0.5, 1)"
             _groupHover={{
               color: "blue.600",
-              transform: "translateX(1rem)",
+              transform: { sm: "translateX(1rem)" },
               opacity: 1,
             }}
           />
