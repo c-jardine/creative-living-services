@@ -178,13 +178,7 @@ export default function HomePage() {
               right={0}
               w={{ sm: "22rem", lg: "26rem" }}
             />
-            <Container
-              as={Stack}
-              position="relative"
-              py={16}
-              spacing={12}
-              maxW="container.xl"
-            >
+            <Stack position="relative" py={16} spacing={12} maxW="container.xl">
               <Heading as="h2" textAlign="center">
                 Services we provide
               </Heading>
@@ -228,7 +222,7 @@ export default function HomePage() {
               >
                 About our services
               </Link>
-            </Container>
+            </Stack>
           </Container>
         </Box>
 
