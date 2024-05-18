@@ -135,7 +135,7 @@ export default function HomePage() {
 
       <Stack spacing={16}>
         <Container as={Stack} maxW="container.md">
-          <Heading id="main-content" as="h1">
+          <Heading as="h1" id="main-content" scrollMarginTop={4}>
             Services for individuals with developmental or cognitive
             disabilities
           </Heading>
