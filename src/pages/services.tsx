@@ -44,7 +44,13 @@ export default function ServicesPage() {
           spacing={16}
           maxW="container.xl"
         >
-          <SplitImageBlock imgSrc="/images/home-care.jpg">
+          <SplitImageBlock
+            imgSrc="/images/home-care.jpg"
+            containerProps={{
+              id: "personal-care-services",
+              scrollMarginTop: 4,
+            }}
+          >
             <Heading as="h2" mt={4} fontSize="2xl" color="blue.900">
               Homemaker Personal Care Services
             </Heading>
@@ -57,7 +63,11 @@ export default function ServicesPage() {
             </Text>
           </SplitImageBlock>
 
-          <SplitImageBlock imgSrc="/images/transportation.jpg" flip>
+          <SplitImageBlock
+            imgSrc="/images/transportation.jpg"
+            flip
+            containerProps={{ id: "transportation", scrollMarginTop: 4 }}
+          >
             <Heading as="h2" mt={4} fontSize="2xl" color="blue.900">
               Medical and Non-Medical Transportation
             </Heading>
@@ -75,6 +85,7 @@ export default function ServicesPage() {
             imgSrc="/images/day-services.jpg"
             contentProps={{ shadow: "lg" }}
             imgProps={{ shadow: "lg" }}
+            containerProps={{ id: "adult-day-services", scrollMarginTop: 4 }}
           >
             <Heading as="h2" mt={4} fontSize="2xl" color="blue.900">
               Adult Day Services
@@ -163,7 +174,7 @@ export default function ServicesPage() {
 
         <Container as={Stack} maxW="container.md"></Container>
 
-        <Box>
+        <Box id="vocational-habilitation" scrollMarginTop={4}>
           <Container maxW="container.lg">
             <SimpleGrid
               columns={{ base: 1, lg: 2 }}
