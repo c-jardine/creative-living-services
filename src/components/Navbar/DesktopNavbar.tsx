@@ -1,3 +1,4 @@
+import { getNavLinkColor } from "@/utils";
 import { Box, Container, HStack, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
@@ -5,10 +6,6 @@ import { Logo } from "../Logo";
 
 export default function DesktopNavbar() {
   const router = useRouter();
-
-  function getLinkColor(url: string) {
-    return router.asPath === url ? "blue.600" : "gray.600";
-  }
 
   return (
     <Box
@@ -25,7 +22,7 @@ export default function DesktopNavbar() {
               href="/"
               aria-label="Navigate to the home page."
               variant="navLink"
-              color={getLinkColor("/")}
+              color={getNavLinkColor(router, "/")}
             >
               Home
             </Link>
@@ -34,7 +31,7 @@ export default function DesktopNavbar() {
               href="/services"
               aria-label="Navigate to the services page."
               variant="navLink"
-              color={getLinkColor("/services")}
+              color={getNavLinkColor(router, "/services")}
             >
               Services
             </Link>
@@ -43,7 +40,7 @@ export default function DesktopNavbar() {
               href="/ads-vh"
               variant="navLink"
               aria-label="Navigate to the adult day services and vocational habilitation page."
-              color={getLinkColor("/ads-vh")}
+              color={getNavLinkColor(router, "/ads-vh")}
             >
               ADS/VH
             </Link>
@@ -52,7 +49,7 @@ export default function DesktopNavbar() {
               href="/about"
               aria-label="Navigate to the about us page"
               variant="navLink"
-              color={getLinkColor("/about")}
+              color={getNavLinkColor(router, "/about")}
             >
               About
             </Link>
@@ -61,7 +58,7 @@ export default function DesktopNavbar() {
               href="/contact"
               aria-label="Navigate to the contact us page"
               variant="navLink"
-              color={getLinkColor("/contact")}
+              color={getNavLinkColor(router, "/contact")}
             >
               Contact
             </Link>

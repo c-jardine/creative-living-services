@@ -1,3 +1,4 @@
+import { getNavLinkColor } from "@/utils";
 import {
   Box,
   Container,
@@ -16,11 +17,14 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import { FaBars, FaEnvelope, FaFacebook, FaPhone } from "react-icons/fa";
 import { Logo } from "../Logo";
 
 export default function MobileNavbar() {
+  const router = useRouter();
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toggleRef = React.useRef(null);
 
@@ -51,6 +55,7 @@ export default function MobileNavbar() {
                     as={NextLink}
                     href="/"
                     variant="navLink"
+                    color={getNavLinkColor(router, "/")}
                     onClick={onClose}
                   >
                     Home
@@ -59,6 +64,7 @@ export default function MobileNavbar() {
                     as={NextLink}
                     href="/services"
                     variant="navLink"
+                    color={getNavLinkColor(router, "/services")}
                     onClick={onClose}
                   >
                     Services
@@ -67,6 +73,7 @@ export default function MobileNavbar() {
                     as={NextLink}
                     href="/ads-vh"
                     variant="navLink"
+                    color={getNavLinkColor(router, "/ads-vh")}
                     onClick={onClose}
                   >
                     ADS/VH
@@ -75,6 +82,7 @@ export default function MobileNavbar() {
                     as={NextLink}
                     href="/about"
                     variant="navLink"
+                    color={getNavLinkColor(router, "/about")}
                     onClick={onClose}
                   >
                     About
@@ -83,6 +91,7 @@ export default function MobileNavbar() {
                     as={NextLink}
                     href="/contact"
                     variant="navLink"
+                    color={getNavLinkColor(router, "/contact")}
                     onClick={onClose}
                   >
                     Contact
@@ -91,6 +100,7 @@ export default function MobileNavbar() {
                     as={NextLink}
                     href="/careers"
                     variant="navLink"
+                    color={getNavLinkColor(router, "/careers")}
                     onClick={onClose}
                   >
                     Careers
