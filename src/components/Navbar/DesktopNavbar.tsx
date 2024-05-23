@@ -13,7 +13,7 @@ export default function DesktopNavbar() {
       bg="white"
       borderBottomWidth={1}
     >
-      <Container maxW="container.2xl" px={8} py={4}>
+      <Container maxW="1920px" px={8} py={4}>
         <HStack justifyContent="space-between">
           <Logo />
           <HStack as="nav">

@@ -11,7 +11,7 @@ import { FaEnvelope, FaFacebook, FaPhone } from "react-icons/fa";
 export default function ContactInfoBar() {
   return (
     <Box display={{ base: "none", lg: "block" }} bg="blue.950">
-      <Container maxW="container.2xl" px={8}>
+      <Container maxW="1920px" px={8}>
         <HStack alignItems="center" justifyContent="space-between">
           <IconButton
             icon={

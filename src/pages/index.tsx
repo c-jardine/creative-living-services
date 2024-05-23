@@ -90,11 +90,12 @@ export default function HomePage() {
         canonical="/"
       />
 
-      <Box position="relative" mt={-16} overflow="hidden">
+      <Container maxW='1920px' position="relative" mt={-16} overflow="hidden">
         <Image
           src="/images/home-hero.jpg"
           alt=""
           h={{ base: "35vh", sm: "45vh", md: "55vh", lg: "75vh" }}
+          maxH='1080px'
           w="full"
           objectFit="cover"
         />
@@ -132,7 +133,7 @@ export default function HomePage() {
             <Icon as={FaChevronRight} />
           </Link>
         </Stack>
-      </Box>
+      </Container>
 
       <Stack spacing={16}>
         <Container as={Stack} maxW="container.md">
@@ -159,7 +160,7 @@ export default function HomePage() {
         </Container>
 
         <Box bg="white">
-          <Container position="relative" maxW="1920px">
+          <Container as={Stack} alignItems='center' position="relative" maxW="1920px">
             <Image
               display={{ base: "none", md: "block" }}
               src="/graphics/squares.png"

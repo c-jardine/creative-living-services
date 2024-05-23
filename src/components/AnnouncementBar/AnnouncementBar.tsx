@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 export default function AnnouncementBar() {
   return (
     <Box bg="blue.600">
-      <Container maxW="container.2xl" px={8}>
+      <Container maxW="1920px" px={8}>
         <Link
           as={NextLink}
           href="/careers"

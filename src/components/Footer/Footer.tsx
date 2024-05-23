@@ -72,7 +72,7 @@ export default function Footer() {
   return (
     <Box as="footer" className={montserrat.className} position="relative">
       <Box bg="white" borderTopWidth={1}>
-        <Container maxW="container.2xl" p={8}>
+        <Container maxW="1920px" p={8}>
           <SimpleGrid columns={{ base: 1, sm: 2, lg: 6 }} spacing={8}>
             <Logo
               containerProps={{
